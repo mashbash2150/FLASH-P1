@@ -13,8 +13,8 @@
 
 #### 
 The objective of (Game name TBD) is much like that of the beloved game of Simon.  Players will be presented with a sequence of various visual prompts 
-(this will be elaborated on as I flesh the game out), that they will need to repeat with buttons representing each prompt.  If the player replicates the sequence correctly, they will
-move on to the next level, where the sequence of prompts will increase in complexity/variation and speed.  Should the user recreates the sequence incorrectly, the game will be over.  
+ that they will need to repeat by clicking buttons representing each prompt (this will be elaborated on as I flesh the game out).  If the player replicates the sequence correctly, they will advance to the next level, where the sequence of prompts will increase in complexity/variation and speed.  Should the user recreate the sequence incorrectly, the game will be over.  
+
 (Insert game name) will be a test of memory and attention, and will feature fun graphics and a dynamic browser-based game interface.    
 
 
