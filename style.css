@@ -1,0 +1,76 @@
+body {
+  background-color: rgba(143, 182, 66, 0.5);
+  display: grid;
+  grid-template-columns: 10vw 15vw 50vw 15vh 10vh;
+  grid-template-rows: 2vh 11vh 7vh 40vh 20vh 20vh;
+}
+
+.title {
+  font-size: 6em;
+  grid-column: 2/5;
+  text-align: center;
+  font-family: 'Nabla', cursive;
+  margin: -80px 0px 0px 0px;
+  letter-spacing: 0.2em;
+}
+
+.level {
+  grid-column-start: 3;
+  grid-row-start: 3;
+  text-align: center;
+  font-family: 'Silkscreen', cursive;
+  font-size: 2em;
+  line-height: 0.25;
+}
+
+.sequence-display {
+  grid-column-start: 3;
+  grid-row-start: 4;
+}
+
+.user-buttons {
+  grid-column: 3/4;
+  grid-row-start: 5;
+  font-family: 'Silkscreen', cursive;
+  text-align: center;
+  font-size: 2em;
+  padding: 0px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px 50px;
+  letter-spacing: 0.5em;
+
+
+}
+
+.button1 {
+  background-color: rgb(252, 59, 155);
+  border-radius: 15px 25px;
+}
+
+.button2 {
+  background-color: rgb(132, 26, 161);
+  border-radius: 15px 25px;
+}
+
+.button3 {
+  background-color: rgb(210, 237, 59);
+  border-radius: 15px 25px;
+}
+
+.button4 {
+  background-color: rgb(47, 203, 234);
+  border-radius: 15px 25px;
+}
+
+.zoom {
+  padding: 10px 0px 10px 0px;
+  transition: transform .2s;
+  /* Animation */
+  margin: 10px;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
