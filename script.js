@@ -12,14 +12,6 @@ const buttons=document.querySelector('.user-buttons')
 //functions
 function levelParams() {
 }
-
-const flashOn=(seq)=>{
-  seq[i].style.opacity=1.0
- }
-
- const flashOff=(seq)=>{
-  seq[i].style.opacity=0.0
- }
  
 const setBlink=(seq)=>{
      
@@ -106,10 +98,15 @@ const mapSequence=(numSeq)=>{
 
  }
 
- const compareSequences=()=>{
-
+ const compareSequences=(userArr,randArr)=>{
+  for(let i=0;i<userArr.length;i++){
+    if (userArr[i] != randArr[i]) {
+      alert("GAME OVER")
+    } else if (userArr.length==randArr.length){
+      alert("NEXT LEVEL")
+    } else{}
  }
-
+ }
 //
 
 
@@ -117,13 +114,26 @@ const mapSequence=(numSeq)=>{
 
 
 //event listeners
+// const buttonListener=()=>{
+//  buttons.addEventListener('click',function(e){
+//   let tempSequence=userSequence.push(e.target.id)
+//   tempSequence=userSequence
+//  })
+//  console.log(userSequence)
+// }
+
 const buttonListener=()=>{
- buttons.addEventListener('click',function(e){
-  let tempSequence=userSequence.push(e.target.id)
-  tempSequence=userSequence
- })
- console.log(userSequence)
+  buttons.addEventListener('click',function(e){
+   let tempSequence=userSequence.push(parseInt(e.target.id))
+   tempSequence=userSequence
+   console.log(userSequence)
+   compareSequences(userSequence,randSequence)
+  })
+   
+  
 }
+ 
+ 
 
 
 const goEventListener = ()=>{
