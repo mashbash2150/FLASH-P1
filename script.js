@@ -7,7 +7,8 @@ const purple=document.querySelector(".purple")
 const yellow=document.querySelector(".yellow")
 const aqua=document.querySelector(".aqua")
 const colorOrder=[pink,purple,yellow,aqua]
-
+const level=document.querySelector('.level')
+const buttons=document.querySelector('.user-buttons')
 //functions
 function levelParams() {
 }
@@ -38,10 +39,8 @@ const setBlink=(seq)=>{
       setTimeout(function(){
         seq[i].style.animation=""},i*800);
         setTimeout(function(){
-          seq[i].style.animation="blink 1s"
+          seq[i].style.animation="blink 0.5s"
         },i*1000)
-      
-      
       
     }};
 
@@ -118,8 +117,14 @@ const mapSequence=(numSeq)=>{
 
 
 //event listeners
+const buttonListener=()=>{
+ buttons.addEventListener('click',function(e){
+  let tempSequence=userSequence.push(e.target.id)
+  tempSequence=userSequence
+ })
+ console.log(userSequence)
+}
 
-const level=document.querySelector(".test")
 
 const goEventListener = ()=>{
   level.addEventListener('click',function(){
@@ -127,7 +132,14 @@ const goEventListener = ()=>{
   })
 }
 
-goEventListener()
 
+
+
+
+
+
+
+goEventListener()
+buttonListener()
 
 
