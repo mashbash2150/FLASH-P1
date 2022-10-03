@@ -1,0 +1,13 @@
+
+HTML:
+CSS:
+
+https://www.w3schools.com/cssref/css3_pr_text-shadow.asp
+https://getflywheel.com/layout/combine-flexbox-and-css-grids-for-layouts-how-to/
+https://css-tricks.com/the-shapes-of-css/
+
+
+JAVASCRIPT:
+
+
+
