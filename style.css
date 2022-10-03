@@ -110,24 +110,26 @@
   width: 140px;
   height: 140px;
   background: rgb(252, 59, 155);
-  opacity: 0.0;
+  opacity: 0;
   border: 3px dotted black;
   border-radius: 50%;
   grid-column: 2/3;
   grid-row: 5/6;
   justify-self: center;
+  animation: ''
 }
 
 .purple {
   width: 140px;
   height: 140px;
   background: rgb(132, 26, 161);
-  opacity: 0.0;
+  opacity: 0;
   border: 3px dotted black;
   border-radius: 50%;
   grid-column: 3/4;
   grid-row: 5/6;
   justify-self: center;
+  animation: ''
 
 }
 
@@ -136,12 +138,13 @@
   width: 140px;
   height: 140px;
   background: rgb(210, 237, 59);
-  opacity: 0.0;
+  opacity: 0;
   border: 3px dotted black;
   border-radius: 50%;
   grid-column: 4/5;
   grid-row: 5/6;
   justify-self: center;
+  animation: ''
 
 }
 
@@ -150,11 +153,23 @@
   width: 140px;
   height: 140px;
   background: rgb(47, 203, 234);
-  opacity: 0.0;
+  opacity: 0;
   border-radius: 50%;
   border: 3px dotted black;
   grid-column: 5/6;
   grid-row: 5/6;
   justify-self: center;
+  animation: ''
 
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

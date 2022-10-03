@@ -33,31 +33,14 @@ const setBlink=(seq)=>{
   //   },i*1000)
   //       seq[i].style.animation=""
   
-    for(let i=0;i<seq.length;i++){
-     
+      for(let i=0;i<seq.length;i++){
       setTimeout(function(){
-        seq[i].style.animation=""},i*800);
-        setTimeout(function(){
-          seq[i].style.animation="blink 1s"
-        },i*1000)
-      
-      
-      
-    }};
+      seq[i].style.animation="blink 2s"
+    },i*1000)};
 
 
-    //this kind of works?
-    // for(let i=0;i<seq.length;i++){
-    
-    //   setTimeout(function(){
-    //   setTimeout(function(){
-    //   seq[i].style.animation="blink 2s"
-    // },i*1000)
-    //   seq[i].style.animation=""},i*900)}
-      
-    // };
      
-  
+  }
 
 
   // }
