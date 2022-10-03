@@ -101,11 +101,14 @@ const mapSequence=(numSeq)=>{
  const compareSequences=(userArr,randArr)=>{
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
-      alert("GAME OVER")
-    } else if (userArr.length==randArr.length){
-      alert("NEXT LEVEL")
-    } else{}
+      document.querySelector(".over").classList.add("next")
+      document.querySelector(".over").innerText="GAME OVER"
+    } 
  }
+  if (userArr.length==randArr.length){
+    document.querySelector(".over").classList.add("next")
+    document.querySelector(".over").innerText="NEXT LEVEL"
+  }
  }
 //
 

@@ -107,8 +107,8 @@
 }
 
 .pink {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   background: rgb(252, 59, 155);
   opacity: 0.1;
   border: 3px dotted black;
@@ -120,8 +120,8 @@
 }
 
 .purple {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   background: rgb(132, 26, 161);
   opacity: 0.1;
   border: 3px dotted black;
@@ -135,8 +135,8 @@
 
 
 .yellow {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   background: rgb(210, 237, 59);
   opacity: 0.1;
   border: 3px dotted black;
@@ -150,8 +150,8 @@
 
 
 .aqua {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   background: rgb(47, 203, 234);
   opacity: 0.1;
   border-radius: 50%;
@@ -163,6 +163,13 @@
 
 }
 
+.next {
+  font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 9em;
+  grid-column: 2/6;
+  grid-row: 4/6;
+  text-align: center;
+}
 
 @keyframes blink {
   0% {
