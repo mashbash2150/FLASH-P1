@@ -2,7 +2,7 @@
   background-color: rgba(143, 182, 66, 0.5);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 2vh 11vh 7vh 15vh 25vh 20vh 20vh;
+  grid-template-rows: 2vh 11vh 7vh 15vh 13vh 12vh 35vh;
 
 }
 
@@ -20,9 +20,19 @@
   grid-row-start: 3;
   text-align: center;
   font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   line-height: 1;
-  margin: 15px 0px 0px 0px
+  margin: 20px 0px 0px 0px
+}
+
+.score {
+  grid-column: 2;
+  grid-row-start: 4;
+  text-align: center;
+  font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  margin: 0px 0px 0px 0px
 }
 
 
@@ -30,7 +40,7 @@
 
 .user-buttons {
   grid-column: 2/3;
-  grid-row: 6/span 1;
+  grid-row: 7/span 1;
   font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-align: center;
   font-size: 1.5em;
@@ -114,14 +124,14 @@
 
 .lights {
   grid-column: 2/3;
-  grid-row: 5/6;
+  grid-row: 5/span 1;
   display: flex;
   justify-content: space-evenly;
 }
 
 .pink {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background: rgb(252, 59, 155);
   opacity: 0.1;
   border: 3px dotted black;
@@ -135,8 +145,8 @@
 
 
 .purple {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background: rgb(132, 26, 161);
   opacity: 0.1;
   border: 3px dotted black;
@@ -150,8 +160,8 @@
 
 
 .yellow {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background: rgb(210, 237, 59);
   opacity: 0.1;
   border: 3px dotted black;
@@ -165,8 +175,8 @@
 
 
 .aqua {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background: rgb(47, 203, 234);
   opacity: 0.1;
   border-radius: 50%;
@@ -176,8 +186,8 @@
 }
 
 .orange {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background: rgb(246, 158, 5);
   opacity: 0.1;
   border-radius: 50%;
@@ -198,9 +208,10 @@
   font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 3em;
   grid-column: 2/3;
-  grid-row: 5/6;
+  grid-row: 6/7;
   text-align: center;
   color: rgb(76, 174, 76);
+  opacity: 0.35;
   align-self: end;
 }
 

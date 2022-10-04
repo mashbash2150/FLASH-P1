@@ -4,6 +4,7 @@ let userSequence=[]
 let maxSeqItems=1   //this is where game begins, gets incremented in levelUp function
 let maxArrItems=4   //will increment this at heigher levels to introduce more colors/circles
 let currentLevel=1
+let currentScore=0
 const lights=document.querySelector(".lights")
 const pink=document.querySelector(".pink")
 const purple=document.querySelector(".purple")
@@ -117,6 +118,10 @@ const mapSequence=(numSeq)=>{
 
 }
 
+const incrementScore=()=>{
+  currentScore+=10
+}
+
 
 
  const levelUp=()=>{
@@ -151,13 +156,18 @@ const mapSequence=(numSeq)=>{
   if (userArr.length==randArr.length){
      if(currentLevel===6){
       document.querySelector(".over").classList.add("next")
-      document.querySelector(".over").innerText=`NEW COLOR ADDED`
       currentLevel++;
+      currentScore++;
+      document.querySelector(".over").innerText=`NEW COLOR ADDED`
+      
       levelUp()
      } else {
-      document.querySelector(".over").classList.add("next")
       currentLevel++;
+      currentScore++;
+      document.querySelector(".over").classList.add("next")
       document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
+      level.innerText=`LEVEL ${currentLevel}`
+      
       levelUp()
      }
     
@@ -178,7 +188,8 @@ const mapSequence=(numSeq)=>{
 const buttonListener=()=>{
   buttons.addEventListener('click',function(e){
    let tempSequence=userSequence.push(parseInt(e.target.id))
-  confirm.innerText="NICE"
+   console.log(e)
+   confirm.innerText=`GREAT`
    tempSequence=userSequence
    console.log(userSequence)
    compareSequences(userSequence,randSequence)
