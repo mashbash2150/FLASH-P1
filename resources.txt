@@ -10,4 +10,4 @@ https://css-tricks.com/the-shapes-of-css/
 JAVASCRIPT:
 
 
-
+https://thewebdev.info/2022/06/29/how-to-create-a-simple-10-second-countdown-with-javascript/

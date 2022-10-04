@@ -1,7 +1,7 @@
 //variables
 let randSequence=[]
 let userSequence=[]
-let maxSeqItems=2   //this is where game begins, gets incremented in levelUp function
+let maxSeqItems=1   //this is where game begins, gets incremented in levelUp function
 let maxArrItems=4   //will increment this at heigher levels to introduce more colors/circles
 let currentLevel=1
 const lights=document.querySelector(".lights")
@@ -13,7 +13,11 @@ let orange=''
 const colorOrder=[pink,purple,yellow,aqua]
 const level=document.querySelector('.level')
 const buttons=document.querySelector('.user-buttons')
+let gameCountdown=4
+const clock=document.querySelector(".clock")
+const confirm=document.querySelector(".confirm")
 
+//TIMER
 
 
 
@@ -26,7 +30,7 @@ const addDivs=()=>{
    addLight.setAttribute("class","orange")
    addButton.setAttribute("class","button5 zoom")
    addButton.setAttribute("id","5")
-   addButton.innerText="BWIP"
+   addButton.innerText="BLIP"
    lights.append(addLight)
    buttons.append(addButton)
    orange=document.querySelector(".orange")
@@ -126,9 +130,8 @@ const mapSequence=(numSeq)=>{
   setTimeout(function(){
     generateSequence(maxSeqItems);
   },2500)
-  if (currentLevel==3){
+  if (currentLevel==7){
     maxArrItems++;
-    console.log(maxArrItems)
     addDivs()
     maxSeqItems-=3;
   }
@@ -138,6 +141,7 @@ const mapSequence=(numSeq)=>{
 //handle user choices, check against random array 
 
  const compareSequences=(userArr,randArr)=>{
+  setTimeout(function(){confirm.innerText=""},500)
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
       document.querySelector(".over").classList.add("next")
@@ -145,11 +149,19 @@ const mapSequence=(numSeq)=>{
     } 
  }
   if (userArr.length==randArr.length){
-    document.querySelector(".over").classList.add("next")
-    currentLevel++;
-    document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
-    levelUp()
-  }
+     if(currentLevel===6){
+      document.querySelector(".over").classList.add("next")
+      document.querySelector(".over").innerText=`NEW COLOR ADDED`
+      currentLevel++;
+      levelUp()
+     } else {
+      document.querySelector(".over").classList.add("next")
+      currentLevel++;
+      document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
+      levelUp()
+     }
+    
+  } 
  }
 
 
@@ -166,6 +178,7 @@ const mapSequence=(numSeq)=>{
 const buttonListener=()=>{
   buttons.addEventListener('click',function(e){
    let tempSequence=userSequence.push(parseInt(e.target.id))
+  confirm.innerText="NICE"
    tempSequence=userSequence
    console.log(userSequence)
    compareSequences(userSequence,randSequence)
@@ -182,10 +195,25 @@ const goEventListener = ()=>{
   })
 }
 
+//TIMER
 
 
+const countdown = () => {
+  if(gameCountdown>1){
+    gameCountdown--;
+      clock.classList.add("next")
+      clock.innerText = `Start in ${gameCountdown}`}
+      else {
+        clearInterval(leadInTimer)
+        clock.classList.remove("next")
+        clock.innerText=''
+      }
+}
+const leadInTimer=()=>{ setInterval(countdown, 1000)}
+const goAhead=(arg1)=>{setTimeout(generateSequence,4300,maxSeqItems)}
 
-
+leadInTimer()
+goAhead()
 goEventListener()
 buttonListener()
 
