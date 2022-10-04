@@ -1,13 +1,16 @@
 //variables
 let randSequence=[]
 let userSequence=[]
-let maxSeqItems=3
-let maxArrItems=4
+let maxSeqItems=2   //this is where game begins, gets incremented in levelUp function
+let maxArrItems=4   //will increment this at heigher levels to introduce more colors/circles
+let currentLevel=1
+const lights=document.querySelector(".lights")
 const pink=document.querySelector(".pink")
 const purple=document.querySelector(".purple")
 const yellow=document.querySelector(".yellow")
 const aqua=document.querySelector(".aqua")
-const colorOrder=[pink,purple,yellow,aqua]
+const orange=document.querySelector(".orange")
+const colorOrder=[pink,purple,yellow,aqua,orange]
 const level=document.querySelector('.level')
 const buttons=document.querySelector('.user-buttons')
 
@@ -15,12 +18,35 @@ const buttons=document.querySelector('.user-buttons')
 
 
 
+
 //functions
-function levelParams() {
+const addDivs=()=>{
+   const addLight=document.createElement('div')
+   const addButton=document.createElement('p')
+   addLight.setAttribute("class","orange")
+   addButton.setAttribute("class","button5 zoom")
+   addButton.setAttribute("id","5")
+   addButton.innerText="BWIP"
+   lights.append(addLight)
+   buttons.append(addButton)
 }
  
+const flashOff=(seq)=>{
+  for(let i=0;i<(seq.length-1);i++){
+     if((seq[i]).style.animation!=''){
+     seq[i].style.animation=''}
+   else {
+  }
+}
+}
 const setBlink=(seq)=>{
-     
+
+  for(let i=0;i<seq.length;i++){
+    if((seq[i]).style.animation!=''){
+    seq[i].style.animation=''}
+  else {
+ }
+}
   //have a class that applies visual queues to circle that mimics a flash
     // for(let i=0;i<seq.length;i++){
     //   setTimeout(flashOn(seq),1000)
@@ -31,16 +57,20 @@ const setBlink=(seq)=>{
   //       seq[i].style.animation="blink 3s"
   //   },i*1000)
   //       seq[i].style.animation=""
-  
+
     for(let i=0;i<seq.length;i++){
-     
+      // if (seq[i].style.animation!=""){
+      //   seq[i].style.animation=""
+      // }
       setTimeout(function(){
-        seq[i].style.animation=""},i*800);
-        setTimeout(function(){
+        seq[i].style.animation=""},i*900);
+      setTimeout(function(){
           seq[i].style.animation="blink 0.5s"
         },i*1000)
-      
-    }};
+    }
+  
+  };
+
 
 
     //this kind of works?
@@ -60,8 +90,8 @@ const mapSequence=(numSeq)=>{
     return colorOrder[number-1]
     return colorSequence;
   })
-  //return colorSequence
   setBlink(colorSequence)
+  
 }
 
   //generate number between 1 and number of Seq items in current level
@@ -90,10 +120,16 @@ const mapSequence=(numSeq)=>{
   userSequence=[]
   setTimeout(function(){
     document.querySelector(".over").innerText="";
-  } , 2500)
+  } , 2000)
   setTimeout(function(){
     generateSequence(maxSeqItems);
-  },3500)
+  },2500)
+  if (currentLevel==6){
+    maxArrItems++;
+    addDivs()
+    maxSeqItems-=3;
+  }
+  flashOff(colorOrder)
 }
 
 //handle user choices, check against random array 
@@ -107,7 +143,8 @@ const mapSequence=(numSeq)=>{
  }
   if (userArr.length==randArr.length){
     document.querySelector(".over").classList.add("next")
-    document.querySelector(".over").innerText="NEXT LEVEL"
+    currentLevel++;
+    document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
     levelUp()
   }
  }

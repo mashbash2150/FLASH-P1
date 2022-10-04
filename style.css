@@ -1,14 +1,14 @@
 #game-page {
   background-color: rgba(143, 182, 66, 0.5);
   display: grid;
-  grid-template-columns: 10vw 20vw 20vw 20vw 20vw 10vw;
+  grid-template-columns: 10vw 80vw 10vw;
   grid-template-rows: 2vh 11vh 7vh 15vh 25vh 20vh 20vh;
 
 }
 
 .title {
   font-size: 6em;
-  grid-column: 2/6;
+  grid-column: 2;
   text-align: center;
   font-family: 'Nabla', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: -80px 0px 0px 0px;
@@ -16,7 +16,7 @@
 }
 
 .level {
-  grid-column: 3/5;
+  grid-column: 2;
   grid-row-start: 3;
   text-align: center;
   font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -29,7 +29,7 @@
 
 
 .user-buttons {
-  grid-column: 3/5;
+  grid-column: 2/3;
   grid-row: 6/span 1;
   font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-align: center;
@@ -60,6 +60,11 @@
 
 .button4 {
   background-color: rgb(47, 203, 234);
+  border-radius: 15px 25px;
+}
+
+.button5 {
+  background-color: rgb(246, 158, 5);
   border-radius: 15px 25px;
 }
 
@@ -106,9 +111,16 @@
   display: inline;
 }
 
+.lights {
+  grid-column: 2/3;
+  grid-row: 5/6;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .pink {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background: rgb(252, 59, 155);
   opacity: 0.1;
   border: 3px dotted black;
@@ -119,9 +131,11 @@
   animation: ''
 }
 
+
+
 .purple {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background: rgb(132, 26, 161);
   opacity: 0.1;
   border: 3px dotted black;
@@ -135,8 +149,8 @@
 
 
 .yellow {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background: rgb(210, 237, 59);
   opacity: 0.1;
   border: 3px dotted black;
@@ -144,21 +158,29 @@
   grid-column: 4/5;
   grid-row: 5/6;
   justify-self: center;
-  animation: ''
+  animation: ""
 
 }
 
 
 .aqua {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background: rgb(47, 203, 234);
   opacity: 0.1;
   border-radius: 50%;
   border: 3px dotted black;
-  grid-column: 5/6;
-  grid-row: 5/6;
-  justify-self: center;
+  animation: ""
+
+}
+
+.orange {
+  width: 100px;
+  height: 100px;
+  background: rgb(246, 158, 5);
+  opacity: 0.1;
+  border-radius: 50%;
+  border: 3px dotted black;
   animation: ''
 
 }
@@ -166,7 +188,7 @@
 .next {
   font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 9em;
-  grid-column: 2/6;
+  grid-column: 2/3;
   grid-row: 4/6;
   text-align: center;
 }
