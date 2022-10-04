@@ -9,8 +9,8 @@ const pink=document.querySelector(".pink")
 const purple=document.querySelector(".purple")
 const yellow=document.querySelector(".yellow")
 const aqua=document.querySelector(".aqua")
-const orange=document.querySelector(".orange")
-const colorOrder=[pink,purple,yellow,aqua,orange]
+let orange=''
+const colorOrder=[pink,purple,yellow,aqua]
 const level=document.querySelector('.level')
 const buttons=document.querySelector('.user-buttons')
 
@@ -29,7 +29,10 @@ const addDivs=()=>{
    addButton.innerText="BWIP"
    lights.append(addLight)
    buttons.append(addButton)
+   orange=document.querySelector(".orange")
+   colorOrder.push(orange)
 }
+
  
 const flashOff=(seq)=>{
   for(let i=0;i<(seq.length-1);i++){
@@ -90,6 +93,7 @@ const mapSequence=(numSeq)=>{
     return colorOrder[number-1]
     return colorSequence;
   })
+  console.log(colorSequence)
   setBlink(colorSequence)
   
 }
@@ -109,9 +113,7 @@ const mapSequence=(numSeq)=>{
 
 }
 
- const storeUserSequence=()=>{
 
- }
 
  const levelUp=()=>{
   maxSeqItems++;
@@ -124,8 +126,9 @@ const mapSequence=(numSeq)=>{
   setTimeout(function(){
     generateSequence(maxSeqItems);
   },2500)
-  if (currentLevel==6){
+  if (currentLevel==3){
     maxArrItems++;
+    console.log(maxArrItems)
     addDivs()
     maxSeqItems-=3;
   }
