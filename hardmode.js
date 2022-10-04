@@ -1,4 +1,6 @@
 //variables
+
+//early iteration where colors flash in dedicated spaces
 let randSequence=[]
 let userSequence=[]
 let maxSeqItems=4
@@ -50,7 +52,6 @@ const setBlink=(seq)=>{
 //       seq[i].style.animation="blink 3s"
 //   },i*1000) 
 // }
-
 
 
 

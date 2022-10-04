@@ -1,7 +1,8 @@
 //variables
 let randSequence=[]
 let userSequence=[]
-let maxSeqItems=4
+let maxSeqItems=3
+let maxArrItems=4
 const pink=document.querySelector(".pink")
 const purple=document.querySelector(".purple")
 const yellow=document.querySelector(".yellow")
@@ -9,6 +10,11 @@ const aqua=document.querySelector(".aqua")
 const colorOrder=[pink,purple,yellow,aqua]
 const level=document.querySelector('.level')
 const buttons=document.querySelector('.user-buttons')
+
+
+
+
+
 //functions
 function levelParams() {
 }
@@ -48,22 +54,7 @@ const setBlink=(seq)=>{
       
     // };
      
-  
-
-
-  // }
-//   for(let i=0;i<seq.length;i++){
-      
-//     let intTimer=setTimeout(function(test){
-//       seq[i].style.animation="blink 3s"
-//   },i*1000) 
-// }
-
-
-
-
-
-
+//maps color sequence to array of numbers
 const mapSequence=(numSeq)=>{
   let colorSequence=numSeq.map((number)=>{
     return colorOrder[number-1]
@@ -73,23 +64,17 @@ const mapSequence=(numSeq)=>{
   setBlink(colorSequence)
 }
 
-
- const generateSequence=(max)=>{
   //generate number between 1 and number of Seq items in current level
+ const generateSequence=(max)=>{
     let randNumber=0;
     for(i=1;i<=max;i++){
-      randNumber=Math.floor(Math.random()*max)+1
+      randNumber=Math.floor(Math.random()*maxArrItems)+1
       randSequence.push(randNumber)
   }
   console.log(randSequence)
   mapSequence(randSequence)
  }
 
-
-
-
-
- 
  const startTimer=()=>{
 
 }
@@ -97,6 +82,21 @@ const mapSequence=(numSeq)=>{
  const storeUserSequence=()=>{
 
  }
+
+ const levelUp=()=>{
+  maxSeqItems++;
+  console.log(maxSeqItems)
+  randSequence=[]
+  userSequence=[]
+  setTimeout(function(){
+    document.querySelector(".over").innerText="";
+  } , 2500)
+  setTimeout(function(){
+    generateSequence(maxSeqItems);
+  },3500)
+}
+
+//handle user choices, check against random array 
 
  const compareSequences=(userArr,randArr)=>{
   for(let i=0;i<userArr.length;i++){
@@ -108,8 +108,12 @@ const mapSequence=(numSeq)=>{
   if (userArr.length==randArr.length){
     document.querySelector(".over").classList.add("next")
     document.querySelector(".over").innerText="NEXT LEVEL"
+    levelUp()
   }
  }
+
+
+
 //
 
 
@@ -117,13 +121,7 @@ const mapSequence=(numSeq)=>{
 
 
 //event listeners
-// const buttonListener=()=>{
-//  buttons.addEventListener('click',function(e){
-//   let tempSequence=userSequence.push(e.target.id)
-//   tempSequence=userSequence
-//  })
-//  console.log(userSequence)
-// }
+
 
 const buttonListener=()=>{
   buttons.addEventListener('click',function(e){
@@ -133,7 +131,6 @@ const buttonListener=()=>{
    compareSequences(userSequence,randSequence)
   })
    
-  
 }
  
  
@@ -144,9 +141,6 @@ const goEventListener = ()=>{
     generateSequence(maxSeqItems)
   })
 }
-
-
-
 
 
 
