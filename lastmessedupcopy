@@ -6,8 +6,7 @@ let maxArrItems=4   //will increment this at heigher levels to introduce more co
 let currentLevel=1
 let currentScore=0
 let points=5
-const lights=document.querySelector(".lights")
-const lightsArr=document.querySelectorAll(".lights div")
+const lights=document.querySelectorAll(".lights div")
 const light1=document.querySelector(".light1")
 const light2=document.querySelector(".light2")
 const light3=document.querySelector(".light3")
@@ -24,7 +23,7 @@ let score=document.querySelector(".score")
 const gamePage=document.querySelector(".game-page")
 const entryPage=document.querySelector(".entry-page")
 const modeButton=document.querySelector(".mode")
-let mode="summer"
+let mode="fall"
 
 //TIMER
 
@@ -124,15 +123,14 @@ const mapSequence=(numSeq)=>{
 
 
 const incrementScore=()=>{
-   currentScore+=10;
-   score.innerText=`SCORE: ${currentScore}`
-  // if (currentLevel>=7) {
-  //   points=10;
-  //   currentScore+=points
-  // } else {
-  //   currentScore+=points
+  if (currentLevel>=7) {
+    points=10;
+    currentScore+=points
+  } else {
+    currentScore+=points
   }
-  
+  score.innerText=`SCORE: ${currentScore}`
+}
 
 
 
@@ -141,34 +139,35 @@ const incrementScore=()=>{
   console.log(maxSeqItems)
   randSequence=[]
   userSequence=[]
+  console.log(randSequence)
   setTimeout(function(){
     document.querySelector(".over").innerText="";
   } , 2000)
   setTimeout(function(){
-    generateSequence(maxSeqItems);
+    
   },2500)
   if (currentLevel==7){
+    generateSequence(maxSeqItems);
     maxArrItems++;
     addDivs()
     maxSeqItems-=3;
     
   }
   flashOff(colorOrder)
+  generateSequence(maxSeqItems)
 }
 
 //handle user choices, check against random array 
 
  const compareSequences=(userArr,randArr)=>{
-  setTimeout(function(){confirm.innerText=""},500)
+  setTimeout(function(){confirm.innerText=""},700)
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
       document.querySelector(".over").classList.add("next")
       document.querySelector(".Y").classList.replace("YNOFF","YNON")
       document.querySelector(".N").classList.replace("YNOFF","YNON")
       document.querySelector(".over").innerText="GAME OVER \n PLAY AGAIN?"
-    }
-  } 
-  if ((userArr[i] == randArr[i]) && userArr.length==randArr.length){
+    } else if ((userArr[i] == randArr[i]) && userArr.length==randArr.length){
      if(currentLevel===6){
       currentLevel++;
       document.querySelector(".over").classList.add("next")
@@ -186,7 +185,7 @@ const incrementScore=()=>{
     
   
 }
- 
+ }
 
 
 
@@ -194,8 +193,8 @@ const incrementScore=()=>{
 
 const toggleMode=()=>{
   if (mode==="fall"){
-  for(let i=0;i<lightsArr.length;i++){
-    lightsArr[i].classList.replace(`light${i+1}fall`,`light${i+1}`)
+  for(let i=0;i<lights.length;i++){
+    lights[i].classList.replace(`light${i+1}fall`,`light${i+1}`)
   }
   for(let i=0;i<buttonsArr.length;i++){
     buttonsArr[i].classList.replace(`button${i+1}fall`,`button${i+1}`)
@@ -203,8 +202,8 @@ const toggleMode=()=>{
   gamePage.classList.replace("game-page-fall","game-page-summer")
   mode="summer"
   } else if (mode==="summer"){
-    for(let i=0;i<lightsArr.length;i++){
-      lightsArr[i].classList.replace(`light${i+1}`,`light${i+1}fall`)
+    for(let i=0;i<lights.length;i++){
+      lights[i].classList.replace(`light${i+1}`,`light${i+1}fall`)
     }
     for(let i=0;i<buttonsArr.length;i++){
       buttonsArr[i].classList.replace(`button${i+1}`,`button${i+1}fall`)

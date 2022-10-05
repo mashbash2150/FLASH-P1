@@ -394,6 +394,7 @@ span {
   grid-row: 5/6;
   text-align: center;
   opacity: 0.6;
+  align-self: center;
   text-shadow: 0 0 17px rgb(174, 29, 29);
 }
 
