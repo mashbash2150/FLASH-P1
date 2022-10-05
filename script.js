@@ -25,6 +25,7 @@ const gamePage=document.querySelector(".game-page")
 const entryPage=document.querySelector(".entry-page")
 const modeButton=document.querySelector(".mode")
 let mode="summer"
+let highScore=localStorage.getItem("HS")
 
 //TIMER
 
@@ -124,16 +125,21 @@ const mapSequence=(numSeq)=>{
 
 
 const incrementScore=()=>{
-   currentScore+=10;
-   score.innerText=`SCORE: ${currentScore}`
-  // if (currentLevel>=7) {
-  //   points=10;
-  //   currentScore+=points
-  // } else {
-  //   currentScore+=points
+  if (currentLevel>=7) {
+    points=10;
+    currentScore+=points
+  } else {
+    currentScore+=points
   }
+  score.innerText=`SCORE: ${currentScore}`
+}
   
-
+const checkHighScore=()=>{
+ if (currentScore>highScore){
+  highScore=currentScore;
+  localStorage.setItem("HS", highScore)
+ }
+}
 
 
  const levelUp=()=>{
@@ -166,6 +172,8 @@ const incrementScore=()=>{
       document.querySelector(".Y").classList.replace("YNOFF","YNON")
       document.querySelector(".N").classList.replace("YNOFF","YNON")
       document.querySelector(".over").innerText="GAME OVER \n PLAY AGAIN?"
+      checkHighScore()
+      
     }
   } 
   if ((userArr[i] == randArr[i]) && userArr.length==randArr.length){
@@ -245,10 +253,11 @@ const goEventListener = ()=>{
   })
 }
 
-//TIMERS
+//TIMERS & STORAGE
 
 
 const countdown = () => {
+  document.querySelector(".highscore").innerText=`HIGH \n${highScore}`
   if(gameCountdown>1){
     gameCountdown--;
       clock.classList.add("next")
@@ -261,6 +270,9 @@ const countdown = () => {
 }
 const leadInTimer=()=>{ setInterval(countdown, 1000)}
 const goAhead=(arg1)=>{setTimeout(generateSequence,4300,maxSeqItems)}
+
+
+
 
 
 //EXECUTE

@@ -2,7 +2,7 @@
   background-color: rgba(132, 181, 144, 0.7);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 2vh 8vh 15vh 15vh 13vh 12vh 35vh;
+  grid-template-rows: 2vh 7vh 11vh 18vh 13vh 9vh 35vh;
 
 }
 
@@ -52,6 +52,27 @@
   grid-column-start: 1;
 }
 
+.highscore {
+  font-family: 'Source Code Pro', monospace;
+  text-align: center;
+  font-size: 12px;
+  margin: 10px 0px 0px 0px;
+  color: yellow;
+  grid-column: 3/4;
+}
+
+.highscorecircle {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  border: 3px dotted black;
+  border-radius: 50%;
+  background-color: rgb(7, 61, 108);
+  grid-column: 3/4;
+  ;
+
+}
+
 .titlesummer {
   font-size: 9em;
   grid-column: 2;
@@ -69,6 +90,7 @@
 .title {
   font-size: 9em;
   grid-column: 2;
+  grid-row: 3/4;
   text-align: center;
   padding: 0px 15px 0px 0px;
   font-family: 'Source Code Pro', monospace;
@@ -81,26 +103,24 @@
 
 .level {
   grid-column: 2;
-  grid-row-start: 4;
+  grid-row-start: 2;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
-  font-size: 2em;
-  line-height: 1;
-  margin: -50px 0px 0px 0px;
+  font-size: 1.2em;
+  margin: 0px 0px 0px 0px;
   text-shadow: 0 0 17px #e8dd09;
   opacity: 0.5;
-  align-self: center;
+
 }
 
 .score {
   grid-column: 2;
-  grid-row-start: 4;
+  grid-row-start: 2;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
-  font-size: 2em;
-  line-height: 1;
+  font-size: 1.2em;
   text-shadow: 0 0 17px #e8dd09;
-  margin: 25px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   opacity: 0.5;
   align-self: center;
 }
@@ -209,7 +229,7 @@ span {
 .button1 {
   background-color: rgba(252, 59, 155, 1.0);
   border-radius: 50px 50px;
-  opacity: 0.75;
+  opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
   box-shadow: 0 0 10px rgb(7, 157, 32);
 }
@@ -217,7 +237,7 @@ span {
 .button2 {
   background-color: rgba(132, 26, 161, 1.0);
   border-radius: 50px 50px;
-  opacity: 0.75;
+  opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
   box-shadow: 0 0 10px rgb(7, 157, 32);
 }
@@ -225,7 +245,7 @@ span {
 .button3 {
   background-color: rgba(210, 237, 59, 1.0);
   border-radius: 50px 50px;
-  opacity: 0.75;
+  opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
   box-shadow: 0 0 10px rgb(7, 157, 32);
 }
@@ -233,7 +253,7 @@ span {
 .button4 {
   background-color: rgb(47, 203, 234);
   border-radius: 50px 50px;
-  opacity: 0.75;
+  opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
   box-shadow: 0 0 10px rgb(7, 157, 32);
 }
@@ -241,7 +261,7 @@ span {
 .button5 {
   background-color: rgba(246, 158, 5, 1.0);
   border-radius: 50px 50px;
-  opacity: 0.75;
+  opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
   box-shadow: 0 0 10px rgb(7, 157, 32);
 }
@@ -282,7 +302,7 @@ span {
   background-color: rgb(37, 24, 2);
   border-radius: 50px 50px;
   color: rgba(0, 0, 0, 0.0);
-  opacity: 0.75;
+  opacity: 0.6;
   box-shadow: 0 0 5px rgb(174, 29, 29);
 }
 

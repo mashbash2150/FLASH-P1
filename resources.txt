@@ -1,13 +1,23 @@
 
 HTML:
+
+https://fonts.google.com/share?selection.family=Orbitron%7CSource%20Code%20Pro:wght@200
+
+
 CSS:
 
 https://www.w3schools.com/cssref/css3_pr_text-shadow.asp
 https://getflywheel.com/layout/combine-flexbox-and-css-grids-for-layouts-how-to/
 https://css-tricks.com/the-shapes-of-css/
+https://www.w3docs.com/snippets/css/how-to-create-a-blinking-effect-with-css3-animations.html
+https://css-tricks.com/how-to-create-neon-text-with-css/
 
 
 JAVASCRIPT:
 
 
 https://thewebdev.info/2022/06/29/how-to-create-a-simple-10-second-countdown-with-javascript/
+https://stackoverflow.com/questions/16206322/how-to-get-js-variable-to-retain-value-after-page-refresh
+https://www.freecodecamp.org/news/thrown-for-a-loop-understanding-for-loops-and-timeouts-in-javascript-558d8255d8a4/
+https://www.w3schools.com/howto/howto_js_countdown.asp
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API#localStorage
