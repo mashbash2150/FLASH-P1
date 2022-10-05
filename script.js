@@ -5,18 +5,23 @@ let maxSeqItems=1   //this is where game begins, gets incremented in levelUp fun
 let maxArrItems=4   //will increment this at heigher levels to introduce more colors/circles
 let currentLevel=1
 let currentScore=0
-const lights=document.querySelector(".lights")
-const pink=document.querySelector(".pink")
-const purple=document.querySelector(".purple")
-const yellow=document.querySelector(".yellow")
-const aqua=document.querySelector(".aqua")
-let orange=''
-const colorOrder=[pink,purple,yellow,aqua]
+const lights=document.querySelectorAll(".lights div")
+const light1=document.querySelector(".light1fall")
+const light2=document.querySelector(".light2fall")
+const light3=document.querySelector(".light3fall")
+const light4=document.querySelector(".light4fall")
+let light5=''
+const colorOrder=[light1,light2,light3,light4]
 const level=document.querySelector('.level')
-const buttons=document.querySelector('.user-buttons')
+const buttons=document.querySelector(".user-buttons")
+const buttonsArr=document.querySelectorAll(".user-buttons p")
 let gameCountdown=4
 const clock=document.querySelector(".clock")
 const confirm=document.querySelector(".confirm")
+let score=document.querySelector(".score")
+const gamePage=document.querySelector(".game-page")
+const modeButton=document.querySelector(".mode")
+let mode="fall"
 
 //TIMER
 
@@ -28,14 +33,14 @@ const confirm=document.querySelector(".confirm")
 const addDivs=()=>{
    const addLight=document.createElement('div')
    const addButton=document.createElement('p')
-   addLight.setAttribute("class","orange")
+   addLight.setAttribute("class","light5")
    addButton.setAttribute("class","button5 zoom")
    addButton.setAttribute("id","5")
    addButton.innerText="BLIP"
    lights.append(addLight)
    buttons.append(addButton)
-   orange=document.querySelector(".orange")
-   colorOrder.push(orange)
+   light5=document.querySelector(".light5")
+   colorOrder.push(light5)
 }
 
  
@@ -119,7 +124,8 @@ const mapSequence=(numSeq)=>{
 }
 
 const incrementScore=()=>{
-  currentScore+=10
+  currentScore+=5
+  score.innerText=`SCORE: ${currentScore}`
 }
 
 
@@ -155,21 +161,19 @@ const incrementScore=()=>{
  }
   if (userArr.length==randArr.length){
      if(currentLevel===6){
-      document.querySelector(".over").classList.add("next")
       currentLevel++;
-      currentScore++;
+      document.querySelector(".over").classList.add("next")
+      document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
       document.querySelector(".over").innerText=`NEW COLOR ADDED`
-      
       levelUp()
      } else {
       currentLevel++;
-      currentScore++;
       document.querySelector(".over").classList.add("next")
       document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
       level.innerText=`LEVEL ${currentLevel}`
-      
       levelUp()
      }
+    
     
   } 
  }
@@ -178,18 +182,42 @@ const incrementScore=()=>{
 
 //
 
-
+const toggleMode=()=>{
+  if (mode==="fall"){
+  for(let i=0;i<lights.length;i++){
+    lights[i].classList.replace(`light${i+1}fall`,`light${i+1}`)
+  }
+  for(let i=0;i<buttonsArr.length;i++){
+    buttonsArr[i].classList.replace(`button${i+1}fall`,`button${i+1}`)
+  }
+  gamePage.classList.replace("game-page-fall","game-page-summer")
+  mode="summer"
+  } else if (mode==="summer"){
+    for(let i=0;i<lights.length;i++){
+      lights[i].classList.replace(`light${i+1}`,`light${i+1}fall`)
+    }
+    for(let i=0;i<buttonsArr.length;i++){
+      buttonsArr[i].classList.replace(`button${i+1}`,`button${i+1}fall`)
+    }
+    gamePage.classList.replace("game-page-summer","game-page-fall")
+    mode="fall"
+  }
+}
 
 
 
 //event listeners
 
+const modeListener=()=>{
+  modeButton.addEventListener("click",toggleMode)
+}
 
 const buttonListener=()=>{
   buttons.addEventListener('click',function(e){
    let tempSequence=userSequence.push(parseInt(e.target.id))
    console.log(e)
    confirm.innerText=`GREAT`
+   incrementScore()
    tempSequence=userSequence
    console.log(userSequence)
    compareSequences(userSequence,randSequence)
@@ -223,6 +251,8 @@ const countdown = () => {
 const leadInTimer=()=>{ setInterval(countdown, 1000)}
 const goAhead=(arg1)=>{setTimeout(generateSequence,4300,maxSeqItems)}
 
+
+modeListener()
 leadInTimer()
 goAhead()
 goEventListener()

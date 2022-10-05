@@ -1,37 +1,69 @@
-#game-page {
-  background-color: rgba(143, 182, 66, 0.5);
+.game-page-summer {
+  background-color: rgba(132, 181, 144, 0.7);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
   grid-template-rows: 2vh 11vh 7vh 15vh 13vh 12vh 35vh;
 
 }
 
-.title {
-  font-size: 6em;
+.game-page-fall {
+  background-color: rgba(105, 55, 17, 0.7);
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-rows: 2vh 11vh 7vh 15vh 13vh 12vh 35vh;
+
+}
+
+.mode {
+  background-color: aliceblue;
+  font-family: 'Source Code Pro', monospace;
+  text-align: center;
+}
+
+.titlesummer {
+  font-size: 9em;
   grid-column: 2;
   text-align: center;
-  font-family: 'Nabla', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 0px 15px 0px 0px;
+  font-family: 'Source Code Pro', monospace;
   margin: -80px 0px 0px 0px;
   letter-spacing: 0.2em;
+  opacity: 0.2;
+  color: rgb(135, 24, 215);
+  text-shadow: 0 0 17px #a72222;
+}
+
+.title {
+  font-size: 9em;
+  grid-column: 2;
+  text-align: center;
+  padding: 0px 15px 0px 0px;
+  font-family: 'Source Code Pro', monospace;
+  margin: -80px 0px 0px 0px;
+  letter-spacing: 0.2em;
+  opacity: 0.2;
+  text-shadow: 0 0 17px #a72222;
 }
 
 .level {
   grid-column: 2;
   grid-row-start: 3;
   text-align: center;
-  font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 2em;
   line-height: 1;
-  margin: 20px 0px 0px 0px
+  margin: 20px 0px 0px 0px;
+  text-shadow: 0 0 17px #cbf21c;
 }
 
 .score {
   grid-column: 2;
   grid-row-start: 4;
   text-align: center;
-  font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 2em;
   line-height: 1;
+  text-shadow: 0 0 17px #cbf21c;
   margin: 0px 0px 0px 0px
 }
 
@@ -41,7 +73,7 @@
 .user-buttons {
   grid-column: 2/3;
   grid-row: 7/span 1;
-  font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   text-align: center;
   font-size: 1.5em;
   padding: 0px;
@@ -55,29 +87,71 @@
 
 
 .button1 {
-  background-color: rgb(252, 59, 155);
-  border-radius: 15px 25px;
+  background-color: rgba(252, 59, 155, 1.0);
+  border-radius: 50px 50px;
 }
 
 .button2 {
-  background-color: rgb(132, 26, 161);
-  border-radius: 15px 25px;
+  background-color: rgba(132, 26, 161, 1.0);
+  border-radius: 50px 50px;
 }
 
 .button3 {
-  background-color: rgb(210, 237, 59);
-  border-radius: 15px 25px;
+  background-color: rgba(210, 237, 59, 1.0);
+  border-radius: 50px 50px;
 }
 
 .button4 {
   background-color: rgb(47, 203, 234);
-  border-radius: 15px 25px;
+  border-radius: 50px 50px;
 }
 
 .button5 {
-  background-color: rgb(246, 158, 5);
-  border-radius: 15px 25px;
+  background-color: rgba(246, 158, 5, 1.0);
+  border-radius: 50px 50px;
 }
+
+.button1fall {
+  background-color: rgb(36, 61, 7);
+  border-radius: 50px 50px;
+  color: rgba(0, 0, 0, 0.0);
+}
+
+.button2fall {
+  background-color: rgb(139, 24, 7);
+  border-radius: 50px 50px;
+  color: rgba(0, 0, 0, 0.0);
+}
+
+.button3fall {
+  background-color: rgb(170, 151, 7);
+  border-radius: 50px 50px;
+  color: rgba(0, 0, 0, 0.0);
+}
+
+.button4fall {
+  background-color: rgb(22, 17, 96);
+  border-radius: 50px 50px;
+  color: rgba(0, 0, 0, 0.0);
+}
+
+.button5fall {
+  background-color: rgb(37, 24, 2);
+  border-radius: 50px 50px;
+  color: rgba(0, 0, 0, 0.0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .zoom {
   padding: 10px 0px 10px 0px;
@@ -94,7 +168,7 @@
 .entry-title {
   writing-mode: vertical-lr;
   text-orientation: upright;
-  font-family: 'Nabla', cursive;
+  font-family: 'Source Code Pro', monospace;
 
 }
 
@@ -110,7 +184,7 @@
 }
 
 .play {
-  font-family: 'Silkscreen';
+  font-family: 'Source Code Pro', monospace;
   border: 15px double black;
   padding: 0px 15px 10px 15px;
 }
@@ -126,10 +200,11 @@
   grid-column: 2/3;
   grid-row: 5/span 1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+
 }
 
-.pink {
+.light1 {
   width: 120px;
   height: 120px;
   background: rgb(252, 59, 155);
@@ -139,12 +214,13 @@
   grid-column: 2/3;
   grid-row: 5/6;
   justify-self: center;
-  animation: ''
+  animation: '';
+  box-shadow: 0 0 17px rgb(174, 29, 29);
 }
 
 
 
-.purple {
+.light2 {
   width: 120px;
   height: 120px;
   background: rgb(132, 26, 161);
@@ -154,12 +230,12 @@
   grid-column: 3/4;
   grid-row: 5/6;
   justify-self: center;
-  animation: ''
-
+  animation: '';
+  box-shadow: 0 0 17px rgb(174, 29, 29);
 }
 
 
-.yellow {
+.light3 {
   width: 120px;
   height: 120px;
   background: rgb(210, 237, 59);
@@ -169,35 +245,38 @@
   grid-column: 4/5;
   grid-row: 5/6;
   justify-self: center;
-  animation: ""
+  animation: "";
+  box-shadow: 0 0 17px rgb(174, 29, 29);
 
 }
 
 
-.aqua {
+.light4 {
   width: 120px;
   height: 120px;
   background: rgb(47, 203, 234);
   opacity: 0.1;
   border-radius: 50%;
   border: 3px dotted black;
-  animation: ""
+  animation: "";
+  box-shadow: 0 0 17px rgb(174, 29, 29);
 
 }
 
-.orange {
+.light5 {
   width: 120px;
   height: 120px;
   background: rgb(246, 158, 5);
   opacity: 0.1;
   border-radius: 50%;
   border: 3px dotted black;
-  animation: ''
+  animation: '';
+  box-shadow: 0 0 17px rgb(174, 29, 29);
 
 }
 
 .next {
-  font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 5em;
   grid-column: 2/3;
   grid-row: 5/6;
@@ -205,7 +284,7 @@
 }
 
 .success {
-  font-family: 'Silkscreen', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 3em;
   grid-column: 2/3;
   grid-row: 6/7;
@@ -223,4 +302,77 @@
   100% {
     opacity: 0.1;
   }
+}
+
+
+
+.light1fall {
+  width: 120px;
+  height: 120px;
+  background: rgb(36, 61, 7);
+  opacity: 0.1;
+  border: 3px dotted black;
+  border-radius: 50%;
+  grid-column: 2/3;
+  grid-row: 5/6;
+  justify-self: center;
+  animation: '';
+  box-shadow: 0 0 17px rgb(174, 29, 29);
+}
+
+
+
+.light2fall {
+  width: 120px;
+  height: 120px;
+  background: rgb(139, 24, 7);
+  opacity: 0.1;
+  border: 3px dotted black;
+  border-radius: 50%;
+  grid-column: 3/4;
+  grid-row: 5/6;
+  justify-self: center;
+  animation: '';
+  box-shadow: 0 0 17px rgb(174, 29, 29);
+}
+
+
+.light3fall {
+  width: 120px;
+  height: 120px;
+  background: rgb(170, 151, 7);
+  opacity: 0.1;
+  border: 3px dotted black;
+  border-radius: 50%;
+  grid-column: 4/5;
+  grid-row: 5/6;
+  justify-self: center;
+  animation: "";
+  box-shadow: 0 0 17px rgb(174, 29, 29);
+
+}
+
+
+.light4fall {
+  width: 120px;
+  height: 120px;
+  background: rgb(22, 17, 96);
+  opacity: 0.1;
+  border-radius: 50%;
+  border: 3px dotted black;
+  animation: "";
+  box-shadow: 0 0 17px rgb(174, 29, 29);
+
+}
+
+.light5fall {
+  width: 120px;
+  height: 120px;
+  background: rgb(37, 24, 2);
+  opacity: 0.1;
+  border-radius: 50%;
+  border: 3px dotted black;
+  animation: '';
+  box-shadow: 0 0 17px rgb(174, 29, 29);
+
 }
