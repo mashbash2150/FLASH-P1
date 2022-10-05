@@ -20,6 +20,7 @@ const clock=document.querySelector(".clock")
 const confirm=document.querySelector(".confirm")
 let score=document.querySelector(".score")
 const gamePage=document.querySelector(".game-page")
+const entryPage=document.querySelector(".entry-page")
 const modeButton=document.querySelector(".mode")
 let mode="fall"
 
@@ -36,7 +37,7 @@ const addDivs=()=>{
    addLight.setAttribute("class","light5")
    addButton.setAttribute("class","button5 zoom")
    addButton.setAttribute("id","5")
-   addButton.innerText="BLIP"
+   addButton.innerText="."
    lights.append(addLight)
    buttons.append(addButton)
    light5=document.querySelector(".light5")
@@ -119,7 +120,7 @@ const mapSequence=(numSeq)=>{
   mapSequence(randSequence)
  }
 
- const startTimer=()=>{
+ const pauseGame=()=>{
 
 }
 
@@ -210,7 +211,9 @@ const toggleMode=()=>{
 
 const modeListener=()=>{
   modeButton.addEventListener("click",toggleMode)
+  //document.querySelector(".mode-entry").addEventListener("click",toggleMode)
 }
+
 
 const buttonListener=()=>{
   buttons.addEventListener('click',function(e){
@@ -251,7 +254,7 @@ const countdown = () => {
 const leadInTimer=()=>{ setInterval(countdown, 1000)}
 const goAhead=(arg1)=>{setTimeout(generateSequence,4300,maxSeqItems)}
 
-
+entryListener()
 modeListener()
 leadInTimer()
 goAhead()

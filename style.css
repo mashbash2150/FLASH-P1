@@ -14,10 +14,42 @@
 
 }
 
+.entry-page-summer {
+  background-color: rgba(143, 182, 66, 0.4);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-rows: 100vh;
+  font-size: 4.5em;
+
+}
+
+.entry-page-fall {
+  background-color: rgba(105, 55, 17, 0.7);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-rows: 100vh;
+  font-size: 4.5em;
+
+}
+
+.modecircle {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  border: 3px dotted black;
+  border-radius: 50%;
+  background-color: rgb(7, 61, 108);
+}
+
 .mode {
-  background-color: aliceblue;
   font-family: 'Source Code Pro', monospace;
   text-align: center;
+  font-size: 12px;
+  margin: 10px 0px 0px 0px;
+  color: yellow;
+  grid-column-start: 1;
 }
 
 .titlesummer {
@@ -53,7 +85,7 @@
   font-size: 2em;
   line-height: 1;
   margin: 20px 0px 0px 0px;
-  text-shadow: 0 0 17px #cbf21c;
+  text-shadow: 0 0 17px #e8dd09;
 }
 
 .score {
@@ -63,12 +95,93 @@
   font-family: 'Source Code Pro', monospace;
   font-size: 2em;
   line-height: 1;
-  text-shadow: 0 0 17px #cbf21c;
+  text-shadow: 0 0 17px #e8dd09;
   margin: 0px 0px 0px 0px
 }
 
+.entry-title {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2em;
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 1/1;
+  opacity: 0.25;
+  text-shadow: 0 0 17px #a72222;
+}
+
+.entry-title-fall {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.5em;
+  grid-row: 1/1;
+
+}
 
 
+.play {
+  font-family: 'Source Code Pro', monospace;
+  padding: 0px 15px 10px 15px;
+  grid-column: 2/3;
+  grid-row: 1/1;
+  justify-self: center;
+  align-self: center;
+  color: rgb(216, 18, 18);
+
+  letter-spacing: 0.45em;
+  margin: 0px 0px 0px 50px;
+  animation: flicker 1s infinite alternate;
+}
+
+.play-fall {
+  font-family: 'Source Code Pro', monospace;
+  padding: 0px 15px 10px 15px;
+  grid-column: 2/3;
+  grid-row: 1/1;
+  justify-self: center;
+  align-self: center;
+  text-shadow: 0 0 17px #dbd412;
+  letter-spacing: 0.45em;
+  margin: 0px 0px 0px 50px;
+  color: rgb(95, 23, 5);
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  opacity: 0.3;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  opacity: 0.9;
+  border: 3px dotted black;
+  border-radius: 50%;
+  grid-column: 2/3;
+  grid-row: 1/1;
+  justify-self: center;
+  align-self: center;
+  background-color: rgba(245, 14, 214, 0.10)
+}
+
+.circle-fall {
+  width: 200px;
+  height: 200px;
+  opacity: 0.9;
+  border: 3px dotted black;
+  border-radius: 50%;
+  grid-column: 2/3;
+  grid-row: 1/1;
+  justify-self: center;
+  align-self: center;
+  background-color: rgba(4, 87, 24, 0.1)
+}
 
 .user-buttons {
   grid-column: 2/3;
@@ -165,29 +278,7 @@
   /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-.entry-title {
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  font-family: 'Source Code Pro', monospace;
 
-}
-
-#entry {
-  background-color: rgba(143, 182, 66, 0.5);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 4.5em;
-  text-shadow: 5px 10px #f533db;
-}
-
-.play {
-  font-family: 'Source Code Pro', monospace;
-  border: 15px double black;
-  padding: 0px 15px 10px 15px;
-}
 
 .sequence-display {
   grid-column-start: 2;
@@ -294,16 +385,6 @@
   align-self: end;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.1;
-  }
-}
-
 
 
 .light1fall {
@@ -375,4 +456,42 @@
   animation: '';
   box-shadow: 0 0 17px rgb(174, 29, 29);
 
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes flicker {
+
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow:
+      0 0 4px rgb(21, 201, 150),
+      0 0 11px rgb(3, 164, 143),
+      0 0 19px rgb(16, 176, 191),
+      0 0 40px rgb(225, 218, 12),
+      0 0 80px rgb(226, 172, 9),
+      0 0 90px rgb(172, 78, 11),
+      0 0 100px rgb(220, 80, 10),
+      0 0 150px rgb(232, 162, 11);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }
