@@ -5,6 +5,7 @@ let maxSeqItems=1   //this is where game begins, gets incremented in levelUp fun
 let maxArrItems=4   //will increment this at heigher levels to introduce more colors/circles
 let currentLevel=1
 let currentScore=0
+let points=5
 const lights=document.querySelectorAll(".lights div")
 const light1=document.querySelector(".light1fall")
 const light2=document.querySelector(".light2fall")
@@ -125,7 +126,12 @@ const mapSequence=(numSeq)=>{
 }
 
 const incrementScore=()=>{
-  currentScore+=5
+  if (currentLevel>=7) {
+    points=10;
+    currentScore+=points
+  } else {
+    currentScore+=points
+  }
   score.innerText=`SCORE: ${currentScore}`
 }
 
@@ -157,10 +163,12 @@ const incrementScore=()=>{
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
       document.querySelector(".over").classList.add("next")
-      document.querySelector(".over").innerText="GAME OVER"
+      document.querySelector(".Y").classList.replace("YNOFF","YNON")
+      document.querySelector(".N").classList.replace("YNOFF","YNON")
+      document.querySelector(".over").innerText="GAME OVER \n PLAY AGAIN?"
+
     } 
- }
-  if (userArr.length==randArr.length){
+  else if (userArr.length==randArr.length){
      if(currentLevel===6){
       currentLevel++;
       document.querySelector(".over").classList.add("next")
@@ -174,9 +182,10 @@ const incrementScore=()=>{
       level.innerText=`LEVEL ${currentLevel}`
       levelUp()
      }
+  }
     
-    
-  } 
+  
+}
  }
 
 
@@ -228,7 +237,6 @@ const buttonListener=()=>{
    
 }
  
- 
 
 
 const goEventListener = ()=>{
@@ -237,14 +245,14 @@ const goEventListener = ()=>{
   })
 }
 
-//TIMER
+//TIMERS
 
 
 const countdown = () => {
   if(gameCountdown>1){
     gameCountdown--;
       clock.classList.add("next")
-      clock.innerText = `Start in ${gameCountdown}`}
+      clock.innerText = `BEGIN IN ${gameCountdown}`}
       else {
         clearInterval(leadInTimer)
         clock.classList.remove("next")
@@ -254,7 +262,9 @@ const countdown = () => {
 const leadInTimer=()=>{ setInterval(countdown, 1000)}
 const goAhead=(arg1)=>{setTimeout(generateSequence,4300,maxSeqItems)}
 
-entryListener()
+
+//EXECUTE
+
 modeListener()
 leadInTimer()
 goAhead()

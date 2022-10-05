@@ -2,12 +2,12 @@
   background-color: rgba(132, 181, 144, 0.7);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 2vh 11vh 7vh 15vh 13vh 12vh 35vh;
+  grid-template-rows: 2vh 8vh 15vh 15vh 13vh 12vh 35vh;
 
 }
 
 .game-page-fall {
-  background-color: rgba(105, 55, 17, 0.7);
+  background-color: rgba(65, 35, 4, 0.7);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
   grid-template-rows: 2vh 11vh 7vh 15vh 13vh 12vh 35vh;
@@ -63,6 +63,7 @@
   opacity: 0.2;
   color: rgb(135, 24, 215);
   text-shadow: 0 0 17px #a72222;
+  animation: flicker 1s infinite alternate;
 }
 
 .title {
@@ -74,29 +75,34 @@
   margin: -80px 0px 0px 0px;
   letter-spacing: 0.2em;
   opacity: 0.2;
-  text-shadow: 0 0 17px #a72222;
+  text-shadow: 0 0 17px rgb(174, 29, 29);
+  animation: flicker 1s infinite alternate;
 }
 
 .level {
   grid-column: 2;
-  grid-row-start: 3;
+  grid-row-start: 4;
   text-align: center;
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Orbitron', sans-serif;
   font-size: 2em;
   line-height: 1;
-  margin: 20px 0px 0px 0px;
+  margin: -50px 0px 0px 0px;
   text-shadow: 0 0 17px #e8dd09;
+  opacity: 0.5;
+  align-self: center;
 }
 
 .score {
   grid-column: 2;
   grid-row-start: 4;
   text-align: center;
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Orbitron', sans-serif;
   font-size: 2em;
   line-height: 1;
   text-shadow: 0 0 17px #e8dd09;
-  margin: 0px 0px 0px 0px
+  margin: 25px 0px 0px 0px;
+  opacity: 0.5;
+  align-self: center;
 }
 
 .entry-title {
@@ -130,7 +136,7 @@
   justify-self: center;
   align-self: center;
   color: rgb(216, 18, 18);
-
+  z-index: 999;
   letter-spacing: 0.45em;
   margin: 0px 0px 0px 50px;
   animation: flicker 1s infinite alternate;
@@ -151,6 +157,7 @@
 
 a {
   text-decoration: none;
+
 }
 
 span {
@@ -202,68 +209,82 @@ span {
 .button1 {
   background-color: rgba(252, 59, 155, 1.0);
   border-radius: 50px 50px;
+  opacity: 0.75;
+  color: rgba(0, 0, 0, 0.0);
+  box-shadow: 0 0 10px rgb(7, 157, 32);
 }
 
 .button2 {
   background-color: rgba(132, 26, 161, 1.0);
   border-radius: 50px 50px;
+  opacity: 0.75;
+  color: rgba(0, 0, 0, 0.0);
+  box-shadow: 0 0 10px rgb(7, 157, 32);
 }
 
 .button3 {
   background-color: rgba(210, 237, 59, 1.0);
   border-radius: 50px 50px;
+  opacity: 0.75;
+  color: rgba(0, 0, 0, 0.0);
+  box-shadow: 0 0 10px rgb(7, 157, 32);
 }
 
 .button4 {
   background-color: rgb(47, 203, 234);
   border-radius: 50px 50px;
+  opacity: 0.75;
+  color: rgba(0, 0, 0, 0.0);
+  box-shadow: 0 0 10px rgb(7, 157, 32);
 }
 
 .button5 {
   background-color: rgba(246, 158, 5, 1.0);
   border-radius: 50px 50px;
+  opacity: 0.75;
+  color: rgba(0, 0, 0, 0.0);
+  box-shadow: 0 0 10px rgb(7, 157, 32);
 }
 
 .button1fall {
   background-color: rgb(36, 61, 7);
   border-radius: 50px 50px;
   color: rgba(0, 0, 0, 0.0);
+  opacity: 0.75;
+  box-shadow: 0 0 5px rgb(174, 29, 29);
 }
 
 .button2fall {
-  background-color: rgb(139, 24, 7);
+  background-color: rgb(90, 7, 53);
   border-radius: 50px 50px;
   color: rgba(0, 0, 0, 0.0);
+  opacity: 0.75;
+  box-shadow: 0 0 5px rgb(174, 29, 29);
 }
 
 .button3fall {
-  background-color: rgb(170, 151, 7);
+  background-color: rgb(179, 128, 11);
   border-radius: 50px 50px;
   color: rgba(0, 0, 0, 0.0);
+  opacity: 0.75;
+  box-shadow: 0 0 5px rgb(174, 29, 29);
 }
 
 .button4fall {
-  background-color: rgb(22, 17, 96);
+  background-color: rgb(49, 46, 94);
   border-radius: 50px 50px;
   color: rgba(0, 0, 0, 0.0);
+  opacity: 0.75;
+  box-shadow: 0 0 5px rgb(174, 29, 29);
 }
 
 .button5fall {
   background-color: rgb(37, 24, 2);
   border-radius: 50px 50px;
   color: rgba(0, 0, 0, 0.0);
+  opacity: 0.75;
+  box-shadow: 0 0 5px rgb(174, 29, 29);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 .zoom {
@@ -368,10 +389,12 @@ span {
 
 .next {
   font-family: 'Source Code Pro', monospace;
-  font-size: 5em;
+  font-size: 4.5em;
   grid-column: 2/3;
   grid-row: 5/6;
   text-align: center;
+  opacity: 0.6;
+  text-shadow: 0 0 17px rgb(174, 29, 29);
 }
 
 .success {
@@ -385,6 +408,43 @@ span {
   align-self: end;
 }
 
+.game-end-buttons {
+  grid-row: 6/7;
+  grid-column: 2/3;
+  justify-self: center;
+  text-align: center;
+  font-size: 3.5em;
+  font-family: 'Source Code Pro', monospace;
+  margin: 35px 0px 0px 0px;
+
+}
+
+.YNOFF {
+  background-color: rgba(131, 13, 13, 0.0);
+  border: 4px dotted rgba(194, 174, 18, 0.0);
+  color: rgba(194, 174, 18, 0.0);
+  width: 150px;
+  height: 75px;
+  margin: 20px 0px 0px 0px;
+  padding: 0px 10px;
+
+
+}
+
+
+
+
+.YNON {
+  background-color: rgba(181, 199, 19, 0.2);
+  border: 4px dotted rgba(36, 32, 2, 0.8);
+  color: rgba(6, 6, 5, 0.8);
+  width: 150px;
+  height: 75px;
+  margin: 0px;
+  padding: 0px 10px;
+  z-index: 999;
+
+}
 
 
 .light1fall {
@@ -406,7 +466,7 @@ span {
 .light2fall {
   width: 120px;
   height: 120px;
-  background: rgb(139, 24, 7);
+  background: rgb(90, 7, 53);
   opacity: 0.1;
   border: 3px dotted black;
   border-radius: 50%;
@@ -421,7 +481,7 @@ span {
 .light3fall {
   width: 120px;
   height: 120px;
-  background: rgb(170, 151, 7);
+  background: rgb(179, 128, 11);
   opacity: 0.1;
   border: 3px dotted black;
   border-radius: 50%;
@@ -437,7 +497,7 @@ span {
 .light4fall {
   width: 120px;
   height: 120px;
-  background: rgb(22, 17, 96);
+  background: rgb(49, 46, 94);
   opacity: 0.1;
   border-radius: 50%;
   border: 3px dotted black;
@@ -479,9 +539,9 @@ span {
   57%,
   100% {
     text-shadow:
-      0 0 4px rgb(21, 201, 150),
-      0 0 11px rgb(3, 164, 143),
-      0 0 19px rgb(16, 176, 191),
+      0 0 4px rgb(107, 21, 4),
+      0 0 11px rgb(215, 78, 3),
+      0 0 19px rgb(126, 4, 145),
       0 0 40px rgb(225, 218, 12),
       0 0 80px rgb(226, 172, 9),
       0 0 90px rgb(172, 78, 11),
