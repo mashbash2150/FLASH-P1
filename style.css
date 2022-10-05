@@ -1,8 +1,15 @@
+body {
+  font-size: 1em;
+
+}
+
 .game-page-summer {
   background-color: rgba(132, 181, 144, 0.7);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
   grid-template-rows: 2vh 7vh 11vh 18vh 13vh 9vh 35vh;
+  font-size: 1em;
+
 
 }
 
@@ -74,7 +81,7 @@
 }
 
 .titlesummer {
-  font-size: 9em;
+  font-size: 9vh;
   grid-column: 2;
   text-align: center;
   padding: 0px 15px 0px 0px;
@@ -87,8 +94,9 @@
   animation: flicker 1s infinite alternate;
 }
 
+
 .title {
-  font-size: 9em;
+  font-size: 16vh;
   grid-column: 2;
   grid-row: 3/4;
   text-align: center;
@@ -129,7 +137,7 @@
   writing-mode: vertical-lr;
   text-orientation: upright;
   font-family: 'Source Code Pro', monospace;
-  font-size: 2em;
+  font-size: 14vh;
   justify-self: center;
   align-self: center;
   grid-column: 2/3;
@@ -138,19 +146,12 @@
   text-shadow: 0 0 17px #a72222;
 }
 
-.entry-title-fall {
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 1.5em;
-  grid-row: 1/1;
-
-}
 
 
 .play {
   font-family: 'Source Code Pro', monospace;
-  padding: 0px 15px 10px 15px;
+  font-size: 9vw;
+  padding: 20px 30px 10px 15px;
   grid-column: 2/3;
   grid-row: 1/1;
   justify-self: center;
@@ -162,18 +163,7 @@
   animation: flicker 1s infinite alternate;
 }
 
-.play-fall {
-  font-family: 'Source Code Pro', monospace;
-  padding: 0px 15px 10px 15px;
-  grid-column: 2/3;
-  grid-row: 1/1;
-  justify-self: center;
-  align-self: center;
-  text-shadow: 0 0 17px #dbd412;
-  letter-spacing: 0.45em;
-  margin: 0px 0px 0px 50px;
-  color: rgb(95, 23, 5);
-}
+
 
 a {
   text-decoration: none;
@@ -219,7 +209,6 @@ span {
   padding: 0px;
   justify-content: space-between;
   align-items: center;
-  border-radius: 15px 50px;
   letter-spacing: 0.5em;
 
 
@@ -348,6 +337,7 @@ span {
   justify-self: center;
   animation: '';
   box-shadow: 0 0 17px rgb(174, 29, 29);
+  position: relative;
 }
 
 
