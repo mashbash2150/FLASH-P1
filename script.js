@@ -30,31 +30,31 @@ const rounds=[
 {
   roundNo:"1",
   beginLevel:1,
-  endLevel:5,
-  interval:1,
+  endLevel:4,
+  interval:0.8,
   phrase:"",
-  removeTO:900,
-  addTO:1000,
+  removeTO:800,
+  addTO:900,
   points:5
 },
 {
   roundNo:"2",
-  beginLevel:6,
-  endLevel:9,
-  interval:1,
+  beginLevel:5,
+  endLevel:8,
+  interval:0.8,
   phrase:"NEW COLOR ADDED",
-  removeTO:900,
-  addTO:1000,
+  removeTO:800,
+  addTO:900,
   points:10,
 },
 {
   roundNo:"3",
-  beginLevel:10,
+  beginLevel:9,
   endLevel:25,
-  interval:0.3,
+  interval:0.25,
   phrase:"FASTER!",
-  removeTO:500,
-  addTO:600,
+  removeTO:400,
+  addTO:500,
   points:15,
 }]
 let x=0
@@ -89,12 +89,13 @@ const addDivs=()=>{
     buttons.append(addButton)
     let light5fall=document.querySelector(".light5fall")
     colorOrder.push(light5fall)}
+
    }
 
 
  //removes animation - though not working reliablly
 const flashOff=(seq)=>{
-  for(let i=0;i<(seq.length-1);i++){
+  for(let i=0;i<(seq.length);i++){
      if((seq[i]).style.animation!=''){
      seq[i].style.animation=''}
    else {
@@ -161,10 +162,10 @@ const checkHighScore=()=>{
   userSequence=[]
   setTimeout(function(){
     document.querySelector(".over").innerText="";
-  } , 2000)
+  } , 1500)
   setTimeout(function(){
     generateSequence(maxSeqItems);
-  },2500)
+  },3000)
   if (currentLevel==rounds[1].beginLevel){
     maxArrItems++;
     addDivs()
@@ -179,6 +180,8 @@ const checkHighScore=()=>{
 
  const compareSequences=(userArr,randArr)=>{
   flashOff(colorOrder)
+
+  //click confirm text
  setTimeout(function(){confirm.innerText=""},400)
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
@@ -285,7 +288,7 @@ const countdown = () => {
       }
 }
 const leadInTimer=()=>{ setInterval(countdown, 1000)}
-const goAhead=(arg1)=>{setTimeout(generateSequence,4200,maxSeqItems)}
+const goAhead=(arg1)=>{setTimeout(generateSequence,4300,maxSeqItems)}
 
 
 
