@@ -12,10 +12,9 @@
 ### **_Description_**
 
 #### 
-The objective of (Game name TBD) is much like that of the beloved game of Simon.  Players will be presented with a sequence of various visual prompts 
- that they will need to repeat by clicking buttons representing each prompt (this will be elaborated on as I flesh the game out).  If the player replicates the sequence correctly, they will advance to the next level, where the sequence of prompts will increase in complexity/variation and speed.  Should the user recreate the sequence incorrectly, the game will be over.  
+The objective of FLASH is much like that of the beloved game of Simon.  The player will be presented with a sequence of visual prompts in the form of blinking colors that they will need to repeat by clicking buttons representing each prompt. If the player replicates the sequence correctly, they will advance to the next level, where the sequence of prompts will increase in complexity/variation and speed.  Should the user recreate the sequence incorrectly, the game will be over.  
 
-(Insert game name) will be a test of memory and attention, and will feature fun graphics and a dynamic browser-based game interface.    
+FLASH will be a test of memory and attention, and will feature fun graphics and a dynamic browser-based game interface.   The simplistic nature of the UI 
 
 
 ---
@@ -24,26 +23,28 @@ The objective of (Game name TBD) is much like that of the beloved game of Simon.
 
 ####
 
-(Insert game name) will be built using the following languages: 
+FLASH will be built using the following languages: 
 
 - HTML
 - CSS
 - Javascript
+    -using localstorage feature of webAPI for a rudimentary highschore tracker
 
 
 ---
 
 ### **_Screenshots_**
 
-#### _Where I will include relevant notes about screenshots to follow..._
+#### 
 
-#### _Before this update_ :sob:
 
-![Before](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F-UvXyRlBKR0%2Fmaxresdefault.jpg&f=1&nofb=1)
+![Entry Page](Images/Screen%20Shot%202022-10-06%20at%2010.17.36%20AM.png)
 
-#### _After this update_ :grin:
+![Summer/Light Mode](Images/Screen%20Shot%202022-10-06%20at%2010.18.02%20AM.png)
 
-![After](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fd.ibtimes.co.uk%2Fen%2Ffull%2F1545347%2Fspace-propulsion.jpg&f=1&nofb=1)
+![Fall/Dark Mode](Images/Screen%20Shot%202022-10-06%20at%2010.18.18%20AM.png)
+
+![Color Added at Level 6](Images/Screen%20Shot%202022-10-06%20at%2010.26.41%20AM.png)
 
 ---
 
@@ -51,9 +52,10 @@ The objective of (Game name TBD) is much like that of the beloved game of Simon.
 
 #### _Where I will address any known issues or fixes planned for the future..._
 
-- [x] Bug Fix Complete
-- [ ] Include Dark Mode
+- [x] Include Dark Mode
+- [ ] Add Pause Button
 - [ ] Insert Sounds
+- [ ] Easy mode/Hard mode?
 
 ---
 
@@ -61,7 +63,29 @@ The objective of (Game name TBD) is much like that of the beloved game of Simon.
 
 #### _Where I will credit my long list of resources_
 
-#### Images: [DuckDuckGo Search](https://duckduckgo.com/?q=image+of+rocketship&iax=images&ia=images&iai=https%3A%2F%2Fd.ibtimes.co.uk%2Fen%2Ffull%2F1545347%2Fspace-propulsion.jpg)
+#### HTML Related: 
+
+[GoogleFonts](https://fonts.google.com/share?selection.family=Orbitron%7CSource%20Code%20Pro:wght@200)
+
+#### CSS Related:
+[W3 Schools-Text Shadow](https://www.w3schools.com/cssref/css3_pr_text-shadow.asp)
+[W3 Docs - Blinking Animations](https://www.w3docs.com/snippets/css/how-to-create-a-blinking-effect-with-css3-animations.html)
+[GetFlyWheel - Combining FLex & Grid](https://getflywheel.com/layout/combine-flexbox-and-css-grids-for-layouts-how-to/)
+[CSS Tricks - Making Shapes](https://css-tricks.com/the-shapes-of-css/)
+[CSS Tricks - Neon Text effect](https://css-tricks.com/how-to-create-neon-text-with-css/)
+[How Big is My Browser - to help with object scaling](http://howbigismybrowser.com/)
+
+#### Javascript Related:
+
+[FreecodeCamp - Using Timeouts in loops](https://www.freecodecamp.org/news/thrown-for-a-loop-understanding-for-loops-and-timeouts-in-javascript-558d8255d8a4/)
+[W3 Schools - Countdown techniques](https://www.w3schools.com/howto/howto_js_countdown.asp)
+[The Web Dev - More Countdown techniques](https://thewebdev.info/2022/06/29/how-to-create-a-simple-10-second-countdown-with-javascript/)
+[MDN - WebStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API#localStorage)
+[StackOverflow-More webstorage guidance](https://stackoverflow.com/questions/16206322/how-to-get-js-variable-to-retain-value-after-page-refresh)
+
+
+
+
 
 #### Markdown Cheatsheet: [MarkdownGuide.org](https://www.markdownguide.org/cheat-sheet/)
 

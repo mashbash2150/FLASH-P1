@@ -7,17 +7,17 @@ body {
   background-color: rgba(132, 181, 144, 0.7);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 2vh 7vh 11vh 18vh 13vh 9vh 35vh;
-  font-size: 1em;
+  grid-template-rows: 2vh 6vh 12vh 18vh 13vh 9vh 35vh;
+
 
 
 }
 
 .game-page-fall {
-  background-color: rgba(65, 35, 4, 0.7);
+  background-color: rgba(9, 6, 2, 0.75);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 2vh 11vh 7vh 15vh 13vh 12vh 35vh;
+  grid-template-rows: 2vh 6vh 12vh 18vh 13vh 9vh 35vh;
 
 }
 
@@ -44,10 +44,10 @@ body {
 .modecircle {
   width: 50px;
   height: 50px;
-  opacity: 0.5;
+  opacity: 0.6;
   border: 3px dotted black;
   border-radius: 50%;
-  background-color: rgb(7, 61, 108);
+  background-color: rgba(7, 61, 108, 0.3);
 }
 
 .mode {
@@ -59,44 +59,49 @@ body {
   grid-column-start: 1;
 }
 
+.highscorecircle {
+  width: 60px;
+  height: 60px;
+  opacity: 0.5;
+  border: 3px dotted yellow;
+  border-radius: 50%;
+  background-color: rgba(7, 61, 108, 0.3);
+  grid-column: 3/4;
+}
+
 .highscore {
   font-family: 'Source Code Pro', monospace;
   text-align: center;
-  font-size: 12px;
+  font-size: 15px;
   margin: 10px 0px 0px 0px;
   color: yellow;
   grid-column: 3/4;
 }
 
-.highscorecircle {
+.exitcircle {
   width: 50px;
   height: 50px;
-  opacity: 0.5;
+  opacity: 0.6;
   border: 3px dotted black;
   border-radius: 50%;
-  background-color: rgb(7, 61, 108);
-  grid-column: 3/4;
-  ;
-
+  background-color: rgba(137, 7, 127, 0.2);
+  grid-column: 1/2;
+  grid-row: 3/4;
+  margin: -10px 15px 0px 0px
 }
 
-.titlesummer {
-  font-size: 9vh;
-  grid-column: 2;
-  text-align: center;
-  padding: 0px 15px 0px 0px;
+.exit {
   font-family: 'Source Code Pro', monospace;
-  margin: -80px 0px 0px 0px;
-  letter-spacing: 0.2em;
-  opacity: 0.2;
-  color: rgb(135, 24, 215);
-  text-shadow: 0 0 17px #a72222;
-  animation: flicker 1s infinite alternate;
+  text-align: center;
+  font-size: 12px;
+  margin: 17px 0px 0px 0px;
+  color: yellow;
+  grid-column: 2/3;
 }
 
 
 .title {
-  font-size: 16vh;
+  font-size: 15vh;
   grid-column: 2;
   grid-row: 3/4;
   text-align: center;
@@ -105,7 +110,7 @@ body {
   margin: -80px 0px 0px 0px;
   letter-spacing: 0.2em;
   opacity: 0.2;
-  text-shadow: 0 0 17px rgb(174, 29, 29);
+  text-shadow: 0 0 17px rgb(179, 55, 55);
   animation: flicker 1s infinite alternate;
 }
 
@@ -118,7 +123,6 @@ body {
   margin: 0px 0px 0px 0px;
   text-shadow: 0 0 17px #e8dd09;
   opacity: 0.5;
-
 }
 
 .score {
@@ -128,7 +132,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.2em;
   text-shadow: 0 0 17px #e8dd09;
-  margin: 0px 0px 0px 0px;
+  margin: 15px 0px 0px 0px;
   opacity: 0.5;
   align-self: center;
 }
@@ -163,41 +167,12 @@ body {
   animation: flicker 1s infinite alternate;
 }
 
-
-
 a {
   text-decoration: none;
-
 }
 
 span {
   opacity: 0.3;
-}
-
-.circle {
-  width: 200px;
-  height: 200px;
-  opacity: 0.9;
-  border: 3px dotted black;
-  border-radius: 50%;
-  grid-column: 2/3;
-  grid-row: 1/1;
-  justify-self: center;
-  align-self: center;
-  background-color: rgba(245, 14, 214, 0.10)
-}
-
-.circle-fall {
-  width: 200px;
-  height: 200px;
-  opacity: 0.9;
-  border: 3px dotted black;
-  border-radius: 50%;
-  grid-column: 2/3;
-  grid-row: 1/1;
-  justify-self: center;
-  align-self: center;
-  background-color: rgba(4, 87, 24, 0.1)
 }
 
 .user-buttons {
@@ -210,10 +185,7 @@ span {
   justify-content: space-between;
   align-items: center;
   letter-spacing: 0.5em;
-
-
 }
-
 
 .button1 {
   background-color: rgba(252, 59, 155, 1.0);
@@ -272,10 +244,10 @@ span {
 }
 
 .button3fall {
-  background-color: rgb(179, 128, 11);
+  background-color: rgb(150, 55, 4);
   border-radius: 50px 50px;
   color: rgba(0, 0, 0, 0.0);
-  opacity: 0.75;
+  opacity: 0.65;
   box-shadow: 0 0 5px rgb(174, 29, 29);
 }
 
@@ -288,7 +260,7 @@ span {
 }
 
 .button5fall {
-  background-color: rgb(37, 24, 2);
+  background-color: rgb(179, 128, 11);
   border-radius: 50px 50px;
   color: rgba(0, 0, 0, 0.0);
   opacity: 0.6;
@@ -313,7 +285,6 @@ span {
 .sequence-display {
   grid-column-start: 2;
   grid-row-start: 5;
-
   display: inline;
 }
 
@@ -322,14 +293,13 @@ span {
   grid-row: 5/span 1;
   display: flex;
   justify-content: space-around;
-
 }
 
 .light1 {
   width: 120px;
   height: 120px;
   background: rgb(252, 59, 155);
-  opacity: 0.1;
+  opacity: 0.15;
   border: 3px dotted black;
   border-radius: 50%;
   grid-column: 2/3;
@@ -340,13 +310,11 @@ span {
   position: relative;
 }
 
-
-
 .light2 {
   width: 120px;
   height: 120px;
   background: rgb(132, 26, 161);
-  opacity: 0.1;
+  opacity: 0.15;
   border: 3px dotted black;
   border-radius: 50%;
   grid-column: 3/4;
@@ -427,7 +395,6 @@ span {
   font-size: 3.5em;
   font-family: 'Source Code Pro', monospace;
   margin: 35px 0px 0px 0px;
-
 }
 
 .YNOFF {
@@ -438,8 +405,6 @@ span {
   height: 75px;
   margin: 20px 0px 0px 0px;
   padding: 0px 10px;
-
-
 }
 
 
@@ -454,7 +419,6 @@ span {
   margin: 0px;
   padding: 0px 10px;
   z-index: 999;
-
 }
 
 
@@ -462,7 +426,7 @@ span {
   width: 120px;
   height: 120px;
   background: rgb(36, 61, 7);
-  opacity: 0.1;
+  opacity: 0.15;
   border: 3px dotted black;
   border-radius: 50%;
   grid-column: 2/3;
@@ -478,7 +442,7 @@ span {
   width: 120px;
   height: 120px;
   background: rgb(90, 7, 53);
-  opacity: 0.1;
+  opacity: 0.15;
   border: 3px dotted black;
   border-radius: 50%;
   grid-column: 3/4;
@@ -492,8 +456,8 @@ span {
 .light3fall {
   width: 120px;
   height: 120px;
-  background: rgb(179, 128, 11);
-  opacity: 0.1;
+  background: rgb(150, 55, 4);
+  opacity: 0.2;
   border: 3px dotted black;
   border-radius: 50%;
   grid-column: 4/5;
@@ -509,7 +473,7 @@ span {
   width: 120px;
   height: 120px;
   background: rgb(49, 46, 94);
-  opacity: 0.1;
+  opacity: 0.15;
   border-radius: 50%;
   border: 3px dotted black;
   animation: "";
@@ -520,7 +484,7 @@ span {
 .light5fall {
   width: 120px;
   height: 120px;
-  background: rgb(37, 24, 2);
+  background: rgb(179, 128, 11);
   opacity: 0.1;
   border-radius: 50%;
   border: 3px dotted black;

@@ -24,8 +24,17 @@ let score=document.querySelector(".score")
 const gamePage=document.querySelector(".game-page")
 const entryPage=document.querySelector(".entry-page")
 const modeButton=document.querySelector(".mode")
+const exitButton=document.querySelector(".exit")
 let mode="summer"
 let highScore=localStorage.getItem("HS")
+const roundOne={
+  maxLevel:6,
+  interval:0.4,
+}
+const roundThree={
+  maxLevel:12,
+  interval:0.2,
+}
 
 //TIMER
 
@@ -35,6 +44,7 @@ let highScore=localStorage.getItem("HS")
 
 //functions
 const addDivs=()=>{
+  if (mode==="summer"){
    const addLight=document.createElement('div')
    const addButton=document.createElement('p')
    addLight.setAttribute("class","light5")
@@ -45,7 +55,20 @@ const addDivs=()=>{
    buttons.append(addButton)
    light5=document.querySelector(".light5")
    colorOrder.push(light5)
-}
+  }
+   else if (mode==="fall") {
+    const addLight=document.createElement('div')
+    const addButton=document.createElement('p')
+    addLight.setAttribute("class","light5fall")
+    addButton.setAttribute("class","button5fall zoom")
+    addButton.setAttribute("id","5")
+    addButton.innerText="."
+    lights.append(addLight)
+    buttons.append(addButton)
+    let light5fall=document.querySelector(".light5fall")
+    colorOrder.push(light5fall)}
+   }
+
 
  
 const flashOff=(seq)=>{
@@ -82,7 +105,7 @@ const setBlink=(seq)=>{
       setTimeout(function(){
         seq[i].style.animation=""},i*900);
       setTimeout(function(){
-          seq[i].style.animation="blink 0.5s"
+          seq[i].style.animation="blink 0.3s"
         },i*1000)
     }
   
@@ -181,7 +204,8 @@ const checkHighScore=()=>{
       currentLevel++;
       document.querySelector(".over").classList.add("next")
       document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
-      document.querySelector(".over").innerText=`NEW COLOR ADDED`
+      document.querySelector(".over").innerText=`ROUND 2 \nNEW COLOR ADDED`
+      level.innerText=`LEVEL ${currentLevel}`
       levelUp()
      } else {
       currentLevel++;
@@ -269,7 +293,7 @@ const countdown = () => {
       }
 }
 const leadInTimer=()=>{ setInterval(countdown, 1000)}
-const goAhead=(arg1)=>{setTimeout(generateSequence,4300,maxSeqItems)}
+const goAhead=(arg1)=>{setTimeout(generateSequence,4200,maxSeqItems)}
 
 
 
