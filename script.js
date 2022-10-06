@@ -5,7 +5,8 @@ let maxSeqItems=1   //this is where game begins, gets incremented in levelUp fun
 let maxArrItems=4   //will increment this at heigher levels to introduce more colors/circles
 let currentLevel=1
 let currentScore=0
-let points=5
+let gameCountdown=4
+let mode="summer"
 const lights=document.querySelector(".lights")
 const lightsArr=document.querySelectorAll(".lights div")
 const light1=document.querySelector(".light1")
@@ -17,7 +18,6 @@ const colorOrder=[light1,light2,light3,light4]
 const level=document.querySelector('.level')
 const buttons=document.querySelector(".user-buttons")
 const buttonsArr=document.querySelectorAll(".user-buttons p")
-let gameCountdown=4
 const clock=document.querySelector(".clock")
 const confirm=document.querySelector(".confirm")
 let score=document.querySelector(".score")
@@ -25,17 +25,17 @@ const gamePage=document.querySelector(".game-page")
 const entryPage=document.querySelector(".entry-page")
 const modeButton=document.querySelector(".mode")
 const exitButton=document.querySelector(".exit")
-let mode="summer"
 let highScore=localStorage.getItem("HS")
 const rounds=[
 {
   roundNo:"1",
   beginLevel:1,
   endLevel:5,
-  interval:0.8,
+  interval:1,
   phrase:"",
   removeTO:900,
   addTO:1000,
+  points:5
 },
 {
   roundNo:"2",
@@ -45,27 +45,26 @@ const rounds=[
   phrase:"NEW COLOR ADDED",
   removeTO:900,
   addTO:1000,
+  points:10,
 },
 {
   roundNo:"3",
   beginLevel:10,
   endLevel:25,
-  interval:0.25,
+  interval:0.3,
   phrase:"FASTER!",
-  removeTO:400,
-  addTO:500,
+  removeTO:500,
+  addTO:600,
+  points:15,
 }]
 let x=0
 let round=rounds[x]
 
 
-//TIMER
 
+//FUNCTIONS
 
-
-
-
-//functions
+//Adding a color at level specified in Round 2 object
 const addDivs=()=>{
   if (mode==="summer"){
    const addLight=document.createElement('div')
@@ -93,7 +92,7 @@ const addDivs=()=>{
    }
 
 
- 
+ //removes animation - though not working reliablly
 const flashOff=(seq)=>{
   for(let i=0;i<(seq.length-1);i++){
      if((seq[i]).style.animation!=''){
@@ -102,63 +101,35 @@ const flashOff=(seq)=>{
   }
 }
 }
+
+
+//operates blinking feature
 const setBlink=(seq)=>{
 
   for(let i=0;i<seq.length;i++){
     if((seq[i]).style.animation!=''){
     seq[i].style.animation=''}}
-//   else {
-//  }
-// }
-  //have a class that applies visual queues to circle that mimics a flash
-    // for(let i=0;i<seq.length;i++){
-    //   setTimeout(flashOn(seq),1000)
-    // 
-  //   for(let i=0;i<seq.length;i++){
-      
-  //     setTimeout(function(test){
-  //       seq[i].style.animation="blink 3s"
-  //   },i*1000)
-  //       seq[i].style.animation=""
 
-    for(let i=0;i<seq.length;i++){
-      // if (seq[i].style.animation!=""){
-      //   seq[i].style.animation=""
-      // }
+  for(let i=0;i<seq.length;i++){
       setTimeout(function(){
         seq[i].style.animation=""},i*round.removeTO);
       setTimeout(function(){
           seq[i].style.animation=`blink ${round.interval}s`
         },i*round.addTO)
     }
-  
   };
 
-
-
-    //this kind of works?
-    // for(let i=0;i<seq.length;i++){
-    
-    //   setTimeout(function(){
-    //   setTimeout(function(){
-    //   seq[i].style.animation="blink 2s"
-    // },i*1000)
-    //   seq[i].style.animation=""},i*900)}
-      
-    // };
-     
 //maps color sequence to array of numbers
 const mapSequence=(numSeq)=>{
   let colorSequence=numSeq.map((number)=>{
     return colorOrder[number-1]
     return colorSequence;
   })
-  console.log(colorSequence)
-  setBlink(colorSequence)
-  
-}
+   setBlink(colorSequence)
+  }
 
-  //generate number between 1 and number of Seq items in current level
+
+  //generate random sequence 
  const generateSequence=(max)=>{
     let randNumber=0;
     for(i=1;i<=max;i++){
@@ -171,15 +142,10 @@ const mapSequence=(numSeq)=>{
 
 
 const incrementScore=()=>{
-  if (currentLevel>=7) {
-    points=10;
-    currentScore+=points
-  } else {
-    currentScore+=points
-  }
+  currentScore+=round.points
   score.innerText=`SCORE: ${currentScore}`
 }
-  
+  //load high score from local storage
 const checkHighScore=()=>{
  if (currentScore>highScore){
   highScore=currentScore;
@@ -199,18 +165,20 @@ const checkHighScore=()=>{
   setTimeout(function(){
     generateSequence(maxSeqItems);
   },2500)
-  if (currentLevel==7){
+  if (currentLevel==rounds[1].beginLevel){
     maxArrItems++;
     addDivs()
-    maxSeqItems-=3;
-    
+    maxSeqItems=1;
+  } else if (currentLevel==rounds[2].beginLevel){
+    maxSeqItems=1;
   }
-  flashOff(colorOrder)
+ // flashOff(colorOrder)
 }
 
-//handle user choices, check against random array 
+//handle user choices, check against random array, display result based on choices
 
  const compareSequences=(userArr,randArr)=>{
+  flashOff(colorOrder)
  setTimeout(function(){confirm.innerText=""},400)
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
@@ -241,14 +209,12 @@ const checkHighScore=()=>{
       levelUp()
      }
   }
-    
-  
 }
  
 
 
 
-//
+//fall/summer mode  NEEDS WORK
 
 const toggleMode=()=>{
   if (mode==="fall"){
@@ -281,7 +247,7 @@ const modeListener=()=>{
   //document.querySelector(".mode-entry").addEventListener("click",toggleMode)
 }
 
-
+//displays a click comfirm when user has the correct choice
 const buttonListener=()=>{
   buttons.addEventListener('click',function(e){
    let tempSequence=userSequence.push(parseInt(e.target.id))
@@ -294,17 +260,17 @@ const buttonListener=()=>{
   })
    
 }
- 
 
-
+//fires off the app
 const goEventListener = ()=>{
   level.addEventListener('click',function(){
     generateSequence(maxSeqItems)
   })
 }
 
-//TIMERS & STORAGE
 
+
+//TIMERS & STORAGE
 
 const countdown = () => {
   document.querySelector(".highscore").innerText=`HIGH \n${highScore}`
