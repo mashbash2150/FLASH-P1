@@ -39,13 +39,18 @@ FLASH will be built using the following languages:
 
 #### 
 
+#### **Entry Page**
 
 ![Entry Page](Images/Screen%20Shot%202022-10-06%20at%2010.17.36%20AM.png)
 
+#### **Summer Mode**
+
 ![Summer/Light Mode](Images/Screen%20Shot%202022-10-06%20at%2010.18.02%20AM.png)
 
+#### **Fall Mode**
 ![Fall/Dark Mode](Images/Screen%20Shot%202022-10-06%20at%2010.18.18%20AM.png)
 
+#### **Color Added Round 2**
 ![Color Added at Level 6](Images/Screen%20Shot%202022-10-06%20at%2010.26.41%20AM.png)
 
 ---
@@ -54,7 +59,8 @@ FLASH will be built using the following languages:
 
 #### _Where I will address any known issues or fixes planned for the future..._
 
-- [x] Include Dark Mode
+- [x] Include Dark Mode 
+- [ ] Bug Fix: Dark mode doesn't persist on reload
 - [ ] Bug Fix: Timer sync issue - sometimes first blink isn't firing (more in dark mode?)
 - [ ] Bug Fix: Figure out how to inclue DOM added item light 5 in flashOff method
 - [ ] Bug Fix: Game over on first turn is behaving unpredictably
@@ -73,19 +79,30 @@ FLASH will be built using the following languages:
 
 #### CSS Related:
 [W3 Schools-Text Shadow](https://www.w3schools.com/cssref/css3_pr_text-shadow.asp)
+
 [W3 Docs - Blinking Animations](https://www.w3docs.com/snippets/css/how-to-create-a-blinking-effect-with-css3-animations.html)
+
 [GetFlyWheel - Combining FLex & Grid](https://getflywheel.com/layout/combine-flexbox-and-css-grids-for-layouts-how-to/)
+
 [CSS Tricks - Making Shapes](https://css-tricks.com/the-shapes-of-css/)
+
 [CSS Tricks - Neon Text effect](https://css-tricks.com/how-to-create-neon-text-with-css/)
+
 [How Big is My Browser - to help with object scaling](http://howbigismybrowser.com/)
+
 
 #### Javascript Related:
 
 [FreecodeCamp - Using Timeouts in loops](https://www.freecodecamp.org/news/thrown-for-a-loop-understanding-for-loops-and-timeouts-in-javascript-558d8255d8a4/)
+
 [W3 Schools - Countdown techniques](https://www.w3schools.com/howto/howto_js_countdown.asp)
+
 [The Web Dev - More Countdown techniques](https://thewebdev.info/2022/06/29/how-to-create-a-simple-10-second-countdown-with-javascript/)
+
 [MDN - WebStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API#localStorage)
+
 [StackOverflow-More webstorage guidance](https://stackoverflow.com/questions/16206322/how-to-get-js-variable-to-retain-value-after-page-refresh)
+
 
 
 
