@@ -27,14 +27,37 @@ const modeButton=document.querySelector(".mode")
 const exitButton=document.querySelector(".exit")
 let mode="summer"
 let highScore=localStorage.getItem("HS")
-const roundOne={
-  maxLevel:6,
-  interval:0.4,
-}
-const roundThree={
-  maxLevel:12,
-  interval:0.2,
-}
+const rounds=[
+{
+  roundNo:"1",
+  beginLevel:1,
+  endLevel:5,
+  interval:0.8,
+  phrase:"",
+  removeTO:900,
+  addTO:1000,
+},
+{
+  roundNo:"2",
+  beginLevel:6,
+  endLevel:9,
+  interval:1,
+  phrase:"NEW COLOR ADDED",
+  removeTO:900,
+  addTO:1000,
+},
+{
+  roundNo:"3",
+  beginLevel:10,
+  endLevel:25,
+  interval:0.25,
+  phrase:"FASTER!",
+  removeTO:400,
+  addTO:500,
+}]
+let x=0
+let round=rounds[x]
+
 
 //TIMER
 
@@ -81,9 +104,9 @@ const flashOff=(seq)=>{
 }
 const setBlink=(seq)=>{
 
-//   for(let i=0;i<seq.length;i++){
-//     if((seq[i]).style.animation!=''){
-//     seq[i].style.animation=''}
+  for(let i=0;i<seq.length;i++){
+    if((seq[i]).style.animation!=''){
+    seq[i].style.animation=''}}
 //   else {
 //  }
 // }
@@ -103,10 +126,10 @@ const setBlink=(seq)=>{
       //   seq[i].style.animation=""
       // }
       setTimeout(function(){
-        seq[i].style.animation=""},i*900);
+        seq[i].style.animation=""},i*round.removeTO);
       setTimeout(function(){
-          seq[i].style.animation="blink 0.3s"
-        },i*1000)
+          seq[i].style.animation=`blink ${round.interval}s`
+        },i*round.addTO)
     }
   
   };
@@ -188,7 +211,7 @@ const checkHighScore=()=>{
 //handle user choices, check against random array 
 
  const compareSequences=(userArr,randArr)=>{
-  setTimeout(function(){confirm.innerText=""},500)
+ setTimeout(function(){confirm.innerText=""},400)
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
       document.querySelector(".over").classList.add("next")
@@ -200,12 +223,15 @@ const checkHighScore=()=>{
     }
   } 
   if ((userArr[i] == randArr[i]) && userArr.length==randArr.length){
-     if(currentLevel===6){
+     if(currentLevel===(round.endLevel)){
       currentLevel++;
       document.querySelector(".over").classList.add("next")
       document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
-      document.querySelector(".over").innerText=`ROUND 2 \nNEW COLOR ADDED`
+      x=x+1;
+      round=rounds[x];
+      document.querySelector(".over").innerText=`ROUND ${round.roundNo} \n ${round.phrase}`
       level.innerText=`LEVEL ${currentLevel}`
+      
       levelUp()
      } else {
       currentLevel++;
