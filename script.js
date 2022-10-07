@@ -195,12 +195,7 @@ const checkHighScore=()=>{
       
     }
   }
-  i=0
   if ((userArr[i] == randArr[i]) && userArr.length==randArr.length){
-  
-    console.log("this is i", i)
-    i++
-    console.log("this is i", i)
     if(currentLevel===(round.endLevel)){
      currentLevel++;
      document.querySelector(".over").classList.add("next")
