@@ -41,7 +41,7 @@ const rounds=[
 {
   roundNo:"2",
   beginLevel:6,
-  endLevel:10,
+  endLevel:9,
   interval:0.8,
   phrase:"NEW COLOR ADDED",
   removeTO:800,
@@ -50,7 +50,7 @@ const rounds=[
 },
 {
   roundNo:"3",
-  beginLevel:11,
+  beginLevel:10,
   endLevel:25,
   interval:0.25,
   phrase:"FASTER!",
@@ -195,34 +195,51 @@ const checkHighScore=()=>{
       
     }
   }
-   
- userArr.forEach((choice,i)=>{
-   
-   if (choice === randArr[i]){
-     console.log(userArr[i],i)
-     if (userArr.length==randArr.length){
-       if(currentLevel===(round.endLevel)){
-         currentLevel++;
-         over.classList.add("next")
-         over.innerText=`LEVEL ${currentLevel}`
-         x=x+1;
-         round=rounds[x];
-         over.innerText=`ROUND ${round.roundNo} \n ${round.phrase}`
-         level.innerText=`LEVEL ${currentLevel}`
-         
-         levelUp()
-        } else {
-          currentLevel++;
-          over.classList.add("next")
-          over.innerText=`LEVEL ${currentLevel}`
-          level.innerText=`LEVEL ${currentLevel}`
-          levelUp()
-        }
-      } 
+  i=0
+  if ((userArr[i] == randArr[i]) && userArr.length==randArr.length){
+  
+    console.log("this is i", i)
+    i++
+    console.log("this is i", i)
+    if(currentLevel===(round.endLevel)){
+     currentLevel++;
+     document.querySelector(".over").classList.add("next")
+     document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
+     x=x+1;
+     round=rounds[x];
+     document.querySelector(".over").innerText=`ROUND ${round.roundNo} \n ${round.phrase}`
+     level.innerText=`LEVEL ${currentLevel}`
+     levelUp()
+    } else {
+     currentLevel++;
+     document.querySelector(".over").classList.add("next")
+     document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
+     level.innerText=`LEVEL ${currentLevel}`
+     levelUp()
     }
-  })  
+ }
+   }
+   
+//  userArr.forEach((choice,i)=>{
+   
+//    if (choice === randArr[i]){
+//      console.log(userArr[i],i)
+//      if (userArr.length==randArr.length){
+//        if(currentLevel===(round.endLevel)){
+//          currentLevel++;
+//          over.classList.add("next")
+//          over.innerText=`LEVEL ${currentLevel}`
+//          x=x+1;
+//          round=rounds[x];
+//          over.innerText=`ROUND ${round.roundNo} \n ${round.phrase}`
+//          level.innerText=`LEVEL ${currentLevel}`
+//          levelUp()
+//         }} } else {
+//         }
+//       } )}
+       
+  
 
-}
  
 
 

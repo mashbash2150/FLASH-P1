@@ -61,12 +61,12 @@ FLASH will be built using the following languages:
 
 - [x] Include Dark Mode 
 - [ ] Bug Fix: Dark mode doesn't persist on reload
-- [ ] Bug Fix: Timer sync issue - sometimes first blink isn't firing (more in dark mode?)
-- [ ] Bug Fix: Figure out how to inclue DOM added item light 5 in flashOff method
-- [ ] Bug Fix: Game over on first turn is behaving unpredictably
+- [X] Bug Fix: Timer sync issue - sometimes first blink isn't firing (more in dark mode?)
+- [X] Bug Fix: Game over on first turn is behaving unpredictably
 - [ ] Add Pause Button
 - [ ] Insert Sounds
 - [ ] Easy mode/Hard mode?
+- [ ] Better speed increase logic
 
 ---
 
