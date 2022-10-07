@@ -25,12 +25,13 @@ const gamePage=document.querySelector(".game-page")
 const entryPage=document.querySelector(".entry-page")
 const modeButton=document.querySelector(".mode")
 const exitButton=document.querySelector(".exit")
+const over=document.querySelector(".over")
 let highScore=localStorage.getItem("HS")
 const rounds=[
 {
   roundNo:"1",
   beginLevel:1,
-  endLevel:5,
+  endLevel:3,
   interval:0.8,
   phrase:"",
   removeTO:800,
@@ -39,8 +40,8 @@ const rounds=[
 },
 {
   roundNo:"2",
-  beginLevel:6,
-  endLevel:9,
+  beginLevel:4,
+  endLevel:6,
   interval:0.8,
   phrase:"NEW COLOR ADDED",
   removeTO:800,
@@ -49,7 +50,7 @@ const rounds=[
 },
 {
   roundNo:"3",
-  beginLevel:10,
+  beginLevel:7,
   endLevel:25,
   interval:0.25,
   phrase:"FASTER!",
@@ -185,33 +186,42 @@ const checkHighScore=()=>{
  setTimeout(function(){confirm.innerText=""},400)
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
+      console.log((userArr[i] != randArr[i]))
+      over.classList.add("next")
+      over.innerText=`GAME OVER \n PLAY AGAIN?`
       document.querySelector(".Y").classList.replace("YNOFF","YNON")
       document.querySelector(".N").classList.replace("YNOFF","YNON")
-      document.querySelector(".over").classList.add("next")
-      document.querySelector(".over").innerText="GAME OVER \n PLAY AGAIN?"
       checkHighScore()
       
     }
-  } 
-  if ((userArr[i] == randArr[i]) && userArr.length==randArr.length){
-     if(currentLevel===(round.endLevel)){
-      currentLevel++;
-      document.querySelector(".over").classList.add("next")
-      document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
-      x=x+1;
-      round=rounds[x];
-      document.querySelector(".over").innerText=`ROUND ${round.roundNo} \n ${round.phrase}`
-      level.innerText=`LEVEL ${currentLevel}`
-      
-      levelUp()
-     } else {
-      currentLevel++;
-      document.querySelector(".over").classList.add("next")
-      document.querySelector(".over").innerText=`LEVEL ${currentLevel}`
-      level.innerText=`LEVEL ${currentLevel}`
-      levelUp()
-     }
   }
+   
+ userArr.forEach((choice,i)=>{
+   
+   if (choice === randArr[i]){
+     console.log(userArr[i],i)
+     if (userArr.length==randArr.length){
+       if(currentLevel===(round.endLevel)){
+         currentLevel++;
+         over.classList.add("next")
+         over.innerText=`LEVEL ${currentLevel}`
+         x=x+1;
+         round=rounds[x];
+         over.innerText=`ROUND ${round.roundNo} \n ${round.phrase}`
+         level.innerText=`LEVEL ${currentLevel}`
+         
+         levelUp()
+        } else {
+          currentLevel++;
+          over.classList.add("next")
+          over.innerText=`LEVEL ${currentLevel}`
+          level.innerText=`LEVEL ${currentLevel}`
+          levelUp()
+        }
+      } 
+    }
+  })  
+
 }
  
 
