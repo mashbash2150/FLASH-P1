@@ -30,7 +30,7 @@ const rounds=[
 {
   roundNo:"1",
   beginLevel:1,
-  endLevel:4,
+  endLevel:5,
   interval:0.8,
   phrase:"",
   removeTO:800,
@@ -39,8 +39,8 @@ const rounds=[
 },
 {
   roundNo:"2",
-  beginLevel:5,
-  endLevel:8,
+  beginLevel:6,
+  endLevel:9,
   interval:0.8,
   phrase:"NEW COLOR ADDED",
   removeTO:800,
@@ -49,7 +49,7 @@ const rounds=[
 },
 {
   roundNo:"3",
-  beginLevel:9,
+  beginLevel:10,
   endLevel:25,
   interval:0.25,
   phrase:"FASTER!",
@@ -185,9 +185,9 @@ const checkHighScore=()=>{
  setTimeout(function(){confirm.innerText=""},400)
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
-      document.querySelector(".over").classList.add("next")
       document.querySelector(".Y").classList.replace("YNOFF","YNON")
       document.querySelector(".N").classList.replace("YNOFF","YNON")
+      document.querySelector(".over").classList.add("next")
       document.querySelector(".over").innerText="GAME OVER \n PLAY AGAIN?"
       checkHighScore()
       
