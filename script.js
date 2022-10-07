@@ -31,7 +31,7 @@ const rounds=[
 {
   roundNo:"1",
   beginLevel:1,
-  endLevel:3,
+  endLevel:5,
   interval:0.8,
   phrase:"",
   removeTO:800,
@@ -40,8 +40,8 @@ const rounds=[
 },
 {
   roundNo:"2",
-  beginLevel:4,
-  endLevel:6,
+  beginLevel:6,
+  endLevel:10,
   interval:0.8,
   phrase:"NEW COLOR ADDED",
   removeTO:800,
@@ -50,7 +50,7 @@ const rounds=[
 },
 {
   roundNo:"3",
-  beginLevel:7,
+  beginLevel:11,
   endLevel:25,
   interval:0.25,
   phrase:"FASTER!",
