@@ -7,7 +7,7 @@ body {
   background-color: rgba(132, 181, 144, 0.7);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 2vh 6vh 12vh 18vh 13vh 9vh 35vh;
+  grid-template-rows: 2vh 9vh 9vh 18vh 13vh 9vh 35vh;
 
 
 
@@ -17,7 +17,7 @@ body {
   background-color: rgba(9, 6, 2, 0.75);
   display: grid;
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 2vh 6vh 12vh 18vh 13vh 9vh 35vh;
+  grid-template-rows: 2vh 9vh 9vh 18vh 13vh 9vh 35vh;
 
 }
 
@@ -41,62 +41,68 @@ body {
 
 }
 
-.modecircle {
-  width: 50px;
-  height: 50px;
+.mode {
+  width: 6vw;
+  height: 6vw;
   opacity: 0.6;
   border: 3px dotted black;
   border-radius: 50%;
   background-color: rgba(7, 61, 108, 0.3);
+  font-family: 'Source Code Pro', monospace;
+  text-align: center;
+  font-size: auto;
+  padding: 1.5vw 1vw 0 1vw;
+  color: yellow;
+  grid-column-start: 1;
 }
 
 .mode {
   font-family: 'Source Code Pro', monospace;
   text-align: center;
-  font-size: 12px;
-  margin: 10px 0px 0px 0px;
+  font-size: 1.5vw;
+
   color: yellow;
   grid-column-start: 1;
 }
 
-.highscorecircle {
-  width: 60px;
-  height: 60px;
+.highscore {
+  width: 6vw;
+  height: 6vw;
   opacity: 0.5;
   border: 3px dotted yellow;
   border-radius: 50%;
   background-color: rgba(7, 61, 108, 0.3);
   grid-column: 3/4;
-}
-
-.highscore {
+  padding: 1.5vw 1vw 0 1vw;
   font-family: 'Source Code Pro', monospace;
   text-align: center;
-  font-size: 15px;
-  margin: 10px 0px 0px 0px;
+  font-size: 1.5vw;
+
   color: yellow;
-  grid-column: 3/4;
 }
 
+
 .exitcircle {
-  width: 50px;
-  height: 50px;
+  width: 6vw;
+  height: 6vw;
   opacity: 0.6;
   border: 3px dotted black;
   border-radius: 50%;
   background-color: rgba(137, 7, 127, 0.2);
   grid-column: 1/2;
   grid-row: 3/4;
-  margin: -10px 15px 0px 0px
+  padding: 2vw 1vw 0 1vw;
+  text-align: center;
+
+
 }
 
 .exit {
   font-family: 'Source Code Pro', monospace;
   text-align: center;
-  font-size: 12px;
-  margin: 17px 0px 0px 0px;
+  font-size: 1.5vw;
   color: yellow;
-  grid-column: 2/3;
+  grid-column: 1/2;
 }
 
 
@@ -119,7 +125,7 @@ body {
   grid-row-start: 2;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.2em;
+  font-size: 2vh;
   margin: -10px 0px 0px 0px;
   text-shadow: 0 0 17px #e8dd09;
   opacity: 0.5;
@@ -130,7 +136,7 @@ body {
   grid-row-start: 2;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.2em;
+  font-size: 2vh;
   text-shadow: 0 0 17px #e8dd09;
   margin: 15px 0px 0px 0px;
   opacity: 0.5;
@@ -169,6 +175,7 @@ body {
 
 a {
   text-decoration: none;
+  padding: 2vh 0 0 0;
 }
 
 span {
@@ -180,7 +187,7 @@ span {
   grid-row: 7/span 1;
   font-family: 'Source Code Pro', monospace;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2.5vw;
   padding: 0px;
   justify-content: space-between;
   align-items: center;
@@ -296,8 +303,8 @@ span {
 }
 
 .light1 {
-  width: 120px;
-  height: 120px;
+  width: 15vw;
+  height: 15vw;
   background: rgb(252, 59, 155);
   opacity: 0.15;
   border: 3px dotted black;
@@ -311,8 +318,8 @@ span {
 }
 
 .light2 {
-  width: 120px;
-  height: 120px;
+  width: 15vw;
+  height: 15vw;
   background: rgb(132, 26, 161);
   opacity: 0.15;
   border: 3px dotted black;
@@ -326,8 +333,8 @@ span {
 
 
 .light3 {
-  width: 120px;
-  height: 120px;
+  width: 15vw;
+  height: 15vw;
   background: rgb(210, 237, 59);
   opacity: 0.1;
   border: 3px dotted black;
@@ -342,8 +349,8 @@ span {
 
 
 .light4 {
-  width: 120px;
-  height: 120px;
+  width: 15vw;
+  height: 15vw;
   background: rgb(47, 203, 234);
   opacity: 0.1;
   border-radius: 50%;
@@ -354,8 +361,8 @@ span {
 }
 
 .light5 {
-  width: 120px;
-  height: 120px;
+  width: 15vw;
+  height: 15vw;
   background: rgb(246, 158, 5);
   opacity: 0.1;
   border-radius: 50%;
