@@ -66,12 +66,8 @@ body {
 }
 
 .highscore {
-  width: 6vw;
-  height: 6vw;
+
   opacity: 0.5;
-  border: 3px dotted yellow;
-  border-radius: 50%;
-  background-color: rgba(7, 61, 108, 0.3);
   grid-column: 3/4;
   padding: 1.5vw 1vw 0 1vw;
   font-family: 'Source Code Pro', monospace;
@@ -138,9 +134,21 @@ body {
   font-family: 'Orbitron', sans-serif;
   font-size: 2vh;
   text-shadow: 0 0 17px #e8dd09;
-  margin: 15px 0px 0px 0px;
+  margin: 4vh 0px 0px 0px;
   opacity: 0.5;
   align-self: center;
+}
+
+.highscore {
+  grid-column: 2;
+  grid-row-start: 2;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2vh;
+  text-shadow: 0 0 17px #e8dd09;
+  margin: 1vh 0px 1vh 0px;
+  opacity: 0.5;
+  align-self: flex-start;
 }
 
 .entry-title {
@@ -199,7 +207,7 @@ span {
   border-radius: 50px 50px;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
-  box-shadow: 0 0 10px rgb(7, 157, 32);
+
 }
 
 .button2 {
@@ -207,7 +215,7 @@ span {
   border-radius: 50px 50px;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
-  box-shadow: 0 0 10px rgb(7, 157, 32);
+
 }
 
 .button3 {
@@ -215,7 +223,7 @@ span {
   border-radius: 50px 50px;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
-  box-shadow: 0 0 10px rgb(7, 157, 32);
+
 }
 
 .button4 {
@@ -223,7 +231,7 @@ span {
   border-radius: 50px 50px;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
-  box-shadow: 0 0 10px rgb(7, 157, 32);
+
 }
 
 .button5 {
@@ -231,7 +239,7 @@ span {
   border-radius: 50px 50px;
   opacity: 0.6;
   color: rgba(0, 0, 0, 0.0);
-  box-shadow: 0 0 10px rgb(7, 157, 32);
+
 }
 
 .button1fall {
@@ -276,7 +284,8 @@ span {
 
 
 .zoom {
-  padding: 10px 0px 10px 0px;
+  padding: 15px 0px 10px 0px;
+  box-shadow: 0 0 10px rgb(7, 157, 32);
   transition: transform .2s;
   /* Animation */
   margin: 10px;
@@ -373,7 +382,7 @@ span {
 
 .next {
   font-family: 'Source Code Pro', monospace;
-  font-size: 4.5em;
+  font-size: 6vh;
   grid-column: 2/3;
   grid-row: 5/6;
   text-align: center;
@@ -385,7 +394,7 @@ span {
 
 .success {
   font-family: 'Source Code Pro', monospace;
-  font-size: 3em;
+  font-size: 6vh;
   grid-column: 2/3;
   grid-row: 6/7;
   text-align: center;
@@ -535,6 +544,75 @@ span {
   .title {
     font-size: 10vh;
   }
+
+  .next {
+    font-size: 4vh;
+  }
+
+  .zoom:hover {
+    transform: scale(1.0)
+      /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  .game-end-buttons {
+    font-size: 3vh;
+  }
+
+  .zoom {
+    padding: 18px 0px 10px 0px;
+    margin-bottom: 3vh;
+    box-shadow: 0 0 0px rgb(7, 157, 32);
+
+  }
+
+  .game-page-summer {
+    background-color: rgba(132, 181, 144, 0.7);
+    display: grid;
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 2vh 9vh 9vh 10vh 8vh;
+
+  }
+
+
+
+  .exitcircle {
+    width: 0vw;
+    height: 0vw;
+    opacity: 0.6;
+    border: 0px dotted black;
+    border-radius: 50%;
+    background-color: rgba(7, 61, 108, 0.0);
+    opacity: 0.6;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: -2vw 0 0 0;
+    padding: 0vw 1vw 2vw 1vw;
+    text-align: center;
+    font-size: 2vh;
+    color: black;
+    text-shadow: 0 0 1vh rgb(174, 29, 29);
+
+
+
+  }
+
+  .mode {
+    width: 0vw;
+    height: 0vw;
+    opacity: 0.6;
+    border: 0px dotted black;
+    border-radius: 50%;
+    background-color: rgba(7, 61, 108, 0.0);
+    font-family: 'Source Code Pro', monospace;
+    text-align: right;
+    font-size: 2vh;
+    padding: 1.5vw 3vw 0 1vw;
+    color: rgb(7, 7, 6);
+    grid-column-start: 2;
+    justify-self: right;
+    text-shadow: 0 0 1vh rgb(174, 29, 29);
+  }
+
 }
 
 @media only screen and (min-width: 1450px) {
@@ -543,5 +621,6 @@ span {
   .light {
     width: 10vw;
     height: 10vw;
+
   }
 }

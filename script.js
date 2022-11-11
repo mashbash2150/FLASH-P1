@@ -70,7 +70,7 @@ const addDivs=()=>{
   if (mode==="summer"){
    const addLight=document.createElement('div')
    const addButton=document.createElement('p')
-   addLight.setAttribute("class","light5")
+   addLight.setAttribute("class"," light light5")
    addButton.setAttribute("class","button5 zoom")
    addButton.setAttribute("id","5")
    addButton.innerText="."
@@ -82,7 +82,7 @@ const addDivs=()=>{
    else if (mode==="fall") {
     const addLight=document.createElement('div')
     const addButton=document.createElement('p')
-    addLight.setAttribute("class","light5fall")
+    addLight.setAttribute("class","light light5fall")
     addButton.setAttribute("class","button5fall zoom")
     addButton.setAttribute("id","5")
     addButton.innerText="."
@@ -298,7 +298,7 @@ const goEventListener = ()=>{
 //TIMERS & STORAGE
 
 const countdown = () => {
-  document.querySelector(".highscore").innerText=`HIGH \n${highScore}`
+  document.querySelector(".highscore").innerText=`HIGH SCORE ${highScore}`
   if(gameCountdown>1){
     gameCountdown--;
       clock.classList.add("next")
