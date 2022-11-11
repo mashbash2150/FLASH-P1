@@ -302,9 +302,13 @@ span {
   justify-content: space-around;
 }
 
-.light1 {
+.light {
   width: 15vw;
   height: 15vw;
+}
+
+.light1 {
+
   background: rgb(252, 59, 155);
   opacity: 0.15;
   border: 3px dotted black;
@@ -318,8 +322,6 @@ span {
 }
 
 .light2 {
-  width: 15vw;
-  height: 15vw;
   background: rgb(132, 26, 161);
   opacity: 0.15;
   border: 3px dotted black;
@@ -333,8 +335,7 @@ span {
 
 
 .light3 {
-  width: 15vw;
-  height: 15vw;
+
   background: rgb(210, 237, 59);
   opacity: 0.1;
   border: 3px dotted black;
@@ -349,8 +350,7 @@ span {
 
 
 .light4 {
-  width: 15vw;
-  height: 15vw;
+
   background: rgb(47, 203, 234);
   opacity: 0.1;
   border-radius: 50%;
@@ -361,8 +361,7 @@ span {
 }
 
 .light5 {
-  width: 15vw;
-  height: 15vw;
+
   background: rgb(246, 158, 5);
   opacity: 0.1;
   border-radius: 50%;
@@ -431,8 +430,6 @@ span {
 
 
 .light1fall {
-  width: 120px;
-  height: 120px;
   background: rgb(36, 61, 7);
   opacity: 0.15;
   border: 3px dotted black;
@@ -447,8 +444,6 @@ span {
 
 
 .light2fall {
-  width: 120px;
-  height: 120px;
   background: rgb(90, 7, 53);
   opacity: 0.15;
   border: 3px dotted black;
@@ -462,8 +457,6 @@ span {
 
 
 .light3fall {
-  width: 120px;
-  height: 120px;
   background: rgb(150, 55, 4);
   opacity: 0.2;
   border: 3px dotted black;
@@ -478,8 +471,6 @@ span {
 
 
 .light4fall {
-  width: 120px;
-  height: 120px;
   background: rgb(49, 46, 94);
   opacity: 0.15;
   border-radius: 50%;
@@ -490,8 +481,6 @@ span {
 }
 
 .light5fall {
-  width: 120px;
-  height: 120px;
   background: rgb(179, 128, 11);
   opacity: 0.1;
   border-radius: 50%;
@@ -536,5 +525,23 @@ span {
   24%,
   55% {
     text-shadow: none;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  /* For mobile phones: */
+  .title {
+    font-size: 10vh;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+
+  /* For mobile phones: */
+  .light {
+    width: 10vw;
+    height: 10vw;
   }
 }
