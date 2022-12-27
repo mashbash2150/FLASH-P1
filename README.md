@@ -60,9 +60,9 @@ FLASH will be built using the following languages:
 #### _Where I will address any known issues or fixes planned for the future..._
 
 - [x] Include Dark Mode 
+- [ ] Bug Fix: Game Over indicator not firing correctly/predictably
 - [ ] Bug Fix: Dark mode doesn't persist on reload
 - [X] Bug Fix: Timer sync issue - sometimes first blink isn't firing (more in dark mode?)
-- [X] Bug Fix: Game over on first turn is behaving unpredictably
 - [ ] Add Pause Button
 - [ ] Insert Sounds
 - [ ] Easy mode/Hard mode?
