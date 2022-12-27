@@ -16,44 +16,71 @@
   <title>FLASH</title>
 </head>
 
-<body class="game-page game-page-summer">
-  <div class="modecircle mode">DARK<br>MODE
-  </div>
+<body class="game-page">
+
+  <div class="game-container">
+    <div class="score-container">
+      <a class="exitcircle exit" href="index.html"><br>EXIT</a>
+      <div class="scores">
+        <div class="level">LEVEL 1</div>
+        <div class="highscore highscorecircle">HIGH SCORE 000</div>
+        <div class="score">SCORE: 0</div>
+      </div>
+      <!-- <div class="modecircle mode">DARK<br>MODE</div> -->
+      <div class="dark-mode-container">
+        <label for="dark-mode">DARK<br>MODE<br></label>
+        <input class="dark-mode" type="checkbox" id="dark-mode" name="toggle1" value="dark">
+      </div>
+    </div>
+    <div class="title">FLASH</div>
+    <div class="lights">
+      <div class="light light1"></div>
+      <div class="light light2"></div>
+      <div class="light light3"></div>
+      <div class="light light4"></div>
+    </div>
+    <div class="user-buttons">
+      <div class="button1 zoom" id="1">.</div>
+      <div class="button2 zoom" id="2">.</div>
+      <div class="button3 zoom" id="3">.</div>
+      <div class="button4 zoom" id="4">.</div>
+    </div>
+
+
+
 
   </div>
-  <div class="title">
+
+  <!-- <div class="title">
     <p>FLASH</p>
-  </div>
-  <div class="level">LEVEL 1</div>
-  <div class="highscore highscorecircle">HIGH SCORE 000</div>
-  <div class="score">SCORE: 0</div>
-  <div class="lights">
-    <div class="light light1"></div>
-    <div class="light light2"></div>
-    <div class="light light3"></div>
-    <div class="light light4"></div>
-  </div>
-  <div class="over"></div>
-  <div class="up"></div>
+  </div> -->
 
-  <div class="confirm success"></div>
-  <div class="clock next">
-    <p class="clock"></p>
+
+
   </div>
 
-  <div class="user-buttons">
+  <!-- <div class="user-buttons">
     <p class="button1 zoom" id="1">.</p>
     <p class="button2 zoom" id="2">.</p>
     <p class="button3 zoom" id="3">.</p>
     <p class="button4 zoom" id="4">.</p>
-  </div>
-  <div class="game-end-buttons">
-    <a class="Y YNOFF" href="game.html">Y</a>
-    <a class="N YNOFF" href="index.html">N</a>
-  </div>
-  <a class="exitcircle exit" href="index.html"><br>EXIT</a>
+  </div>  -->
+  <div class="game-play-indicators">
+    <div class="over"></div>
+    <div class="up"></div>
 
-  <script defer src="script.js" charset="utf-8"></script>
+    <div class="confirm success"></div>
+    <div class="clock next">
+      <div class="clock"></div>
+    </div>
+    <div class="game-end-buttons">
+      <a class="Y YNOFF" href="game.html">Y</a>
+      <a class="N YNOFF" href="index.html">N</a>
+
+    </div>
+    <!-- <a class="exitcircle exit" href="index.html"><br>EXIT</a>  -->
+
+    <script defer src="script.js" charset="utf-8"></script>
 </body>
 
 </html>

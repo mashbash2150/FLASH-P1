@@ -67,9 +67,9 @@ let round=rounds[x]
 
 //Adding a color at level specified in Round 2 object
 const addDivs=()=>{
-  if (mode==="summer"){
+  // if (mode==="summer"){
    const addLight=document.createElement('div')
-   const addButton=document.createElement('p')
+   const addButton=document.createElement('div')
    addLight.setAttribute("class"," light light5")
    addButton.setAttribute("class","button5 zoom")
    addButton.setAttribute("id","5")
@@ -79,19 +79,22 @@ const addDivs=()=>{
    light5=document.querySelector(".light5")
    colorOrder.push(light5)
   }
-   else if (mode==="fall") {
-    const addLight=document.createElement('div')
-    const addButton=document.createElement('p')
-    addLight.setAttribute("class","light light5fall")
-    addButton.setAttribute("class","button5fall zoom")
-    addButton.setAttribute("id","5")
-    addButton.innerText="."
-    lights.append(addLight)
-    buttons.append(addButton)
-    let light5fall=document.querySelector(".light5fall")
-    colorOrder.push(light5fall)}
 
-   }
+  //REMOVED DURING REFACTOR - DARK MODE NOW HANDLED BY CSS ENTIRELY
+
+  //  else if (mode==="fall") {
+  //   const addLight=document.createElement('div')
+  //   const addButton=document.createElement('p')
+  //   addLight.setAttribute("class","light light5fall")
+  //   addButton.setAttribute("class","button5fall zoom")
+  //   addButton.setAttribute("id","5")
+  //   addButton.innerText="."
+  //   lights.append(addLight)
+  //   buttons.append(addButton)
+  //   let light5fall=document.querySelector(".light5fall")
+  //   colorOrder.push(light5fall)}
+
+  //  }
 
 
  //removes animation - though not working reliablly
@@ -183,7 +186,7 @@ const checkHighScore=()=>{
   flashOff(colorOrder)
 
   //click confirm text
- setTimeout(function(){confirm.innerText=""},400)
+ setTimeout(function(){confirm.innerText=""},300)
   for(let i=0;i<userArr.length;i++){
     if (userArr[i] != randArr[i]) {
       console.log((userArr[i] != randArr[i]))
@@ -241,36 +244,41 @@ const checkHighScore=()=>{
 
 //fall/summer mode  NEEDS WORK
 
-const toggleMode=()=>{
-  if (mode==="fall"){
-  for(let i=0;i<lightsArr.length;i++){
-    lightsArr[i].classList.replace(`light${i+1}fall`,`light${i+1}`)
-  }
-  for(let i=0;i<buttonsArr.length;i++){
-    buttonsArr[i].classList.replace(`button${i+1}fall`,`button${i+1}`)
-  }
-  gamePage.classList.replace("game-page-fall","game-page-summer")
-  mode="summer"
-  } else if (mode==="summer"){
-    for(let i=0;i<lightsArr.length;i++){
-      lightsArr[i].classList.replace(`light${i+1}`,`light${i+1}fall`)
-    }
-    for(let i=0;i<buttonsArr.length;i++){
-      buttonsArr[i].classList.replace(`button${i+1}`,`button${i+1}fall`)
-    }
-    gamePage.classList.replace("game-page-summer","game-page-fall")
-    mode="fall"
-  }
-}
+
+//REMOVED AFTER REFACTOR
+
+// const toggleMode=()=>{
+//   if (mode==="fall"){
+//   for(let i=0;i<lightsArr.length;i++){
+//     lightsArr[i].classList.replace(`light${i+1}fall`,`light${i+1}`)
+//   }
+//   for(let i=0;i<buttonsArr.length;i++){
+//     buttonsArr[i].classList.replace(`button${i+1}fall`,`button${i+1}`)
+//   }
+//   gamePage.classList.replace("game-page-fall","game-page-summer")
+//   mode="summer"
+//   } else if (mode==="summer"){
+//     for(let i=0;i<lightsArr.length;i++){
+//       lightsArr[i].classList.replace(`light${i+1}`,`light${i+1}fall`)
+//     }
+//     for(let i=0;i<buttonsArr.length;i++){
+//       buttonsArr[i].classList.replace(`button${i+1}`,`button${i+1}fall`)
+//     }
+//     gamePage.classList.replace("game-page-summer","game-page-fall")
+//     mode="fall"
+//   }
+// }
 
 
 
 //event listeners
 
-const modeListener=()=>{
-  modeButton.addEventListener("click",toggleMode)
-  //document.querySelector(".mode-entry").addEventListener("click",toggleMode)
-}
+//REMOVED AFTER REFACTOR
+
+// const modeListener=()=>{
+//   modeButton.addEventListener("click",toggleMode)
+//   //document.querySelector(".mode-entry").addEventListener("click",toggleMode)
+// }
 
 //displays a click comfirm when user has the correct choice
 const buttonListener=()=>{
@@ -306,7 +314,7 @@ const countdown = () => {
       else {
         clearInterval(leadInTimer)
         clock.classList.remove("next")
-        clock.innerText=''
+        clock.innerText=null
       }
 }
 const leadInTimer=()=>{ setInterval(countdown, 1000)}
@@ -318,7 +326,7 @@ const goAhead=(arg1)=>{setTimeout(generateSequence,4300,maxSeqItems)}
 
 //EXECUTE
 
-modeListener()
+// modeListener()
 leadInTimer()
 goAhead()
 goEventListener()
