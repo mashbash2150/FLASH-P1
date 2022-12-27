@@ -34,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 2.5vw;
+  font-size: 2.5vh;
   opacity: 0.7;
   text-align: center;
   margin: 0vw;
@@ -54,7 +54,7 @@ body {
 
 
 .title {
-  font-size: 15vw;
+  font-size: 10vw;
   text-align: center;
   font-family: 'Source Code Pro', monospace;
   opacity: 0.2;
@@ -140,7 +140,7 @@ body {
 }
 
 .user-buttons div {
-  height: 7vw;
+  height: 6vh;
   margin-bottom: 2vh;
   box-shadow: 0 0 10px rgb(7, 157, 32);
 }
@@ -398,7 +398,7 @@ span {
   font-size: 1.5vw;
   color: yellow;
   grid-column: 1/2;
-} */
+}
 
 
 /* .title {
@@ -619,6 +619,15 @@ span {
 
 } */
 
+.scores {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 3.5vw;
+  opacity: 0.7;
+  text-align: center;
+  margin: 0vw;
+}
 
 .game-play-indicators {
   display: flex;
@@ -641,7 +650,7 @@ span {
   font-size: 4vh;
   text-align: center;
   opacity: 0.6;
-  height: 10vh;
+
   align-self: center;
   background-color: yellow;
   border-radius: 10px;
@@ -653,13 +662,12 @@ span {
 
 .success {
   font-family: 'Source Code Pro', monospace;
-  font-size: 6vh;
-  grid-column: 2/3;
-  grid-row: 6/7;
+  font-size: 6vw;
   text-align: center;
   color: rgb(76, 174, 76);
   opacity: 0.35;
-  align-self: end;
+
+
 }
 
 .game-end-buttons {
@@ -803,7 +811,7 @@ span {
   }
 }
 
-/* @media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1000px) {
   .light {
     width: 150px;
     height: 150px;
@@ -812,18 +820,33 @@ span {
 
 @media only screen and (max-width: 600px) {
 
-  /* For mobile phones: */
-/* .user-buttons {
-    margin-top: 12vh;
+  /* For mobile phones:  */
+
+  body {
+    margin-top: 5vh;
+  }
+
+  .user-buttons div {
+    margin-top: 2vh;
+    font-size: 1vh;
+    height: 2vh;
+
   }
 
   .lights {
-    margin-top: 9vh;
+    margin-top: 2vh;
+    flex-wrap: wrap;
+  }
+
+  .light {
+    margin: 1vw;
+    width: 16vw;
+    height: 16vw;
   }
 
   .title {
-    font-size: 10vh;
-    margin-top: -2vh;
+    font-size: 7vh;
+    margin-top: 2vh;
 
   }
 
@@ -831,10 +854,7 @@ span {
     font-size: 4vh;
   }
 
-  .zoom:hover {
-    transform: scale(1.0) */
-/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-/* }
+
 
   .game-end-buttons {
     font-size: 3vh;
@@ -847,13 +867,18 @@ span {
 
   }
 
-  .game-page-summer {
+  .zoom:hover,
+  .zoom:active {
+    transform: scale(1.0) (150%)
+  }
+
+  /* .game-page-summer {
     background-color: rgba(132, 181, 144, 0.7);
     display: grid;
     grid-template-columns: 10vw 80vw 10vw;
     grid-template-rows: 2vh 9vh 9vh 10vh 8vh;
 
-  }
+  } */
 
 
 
@@ -867,10 +892,9 @@ span {
     opacity: 0.6;
     grid-column: 1/2;
     grid-row: 1/2;
-    margin: -2vw 0 0 0;
-    padding: 0vw 1vw 2vw 1vw;
+
     text-align: center;
-    font-size: 2vh;
+    font-size: 2vw;
     color: black;
     text-shadow: 0 0 1vh rgb(174, 29, 29);
 
@@ -895,7 +919,8 @@ span {
     text-shadow: 0 0 1vh rgb(174, 29, 29);
   }
 
-} */
+}
+
 
 /* body:has(.dark-mode-fall:checked) .light1 {
   background: rgb(36, 61, 7);
@@ -909,4 +934,4 @@ span {
     height: 10vw;
 
   }
-/* } */
+/* 
