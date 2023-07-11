@@ -70,39 +70,7 @@ FLASH will be built using the following languages:
 
 ---
 
-### **_Credits_**
 
-
-#### HTML Related: 
-
-[GoogleFonts](https://fonts.google.com/share?selection.family=Orbitron%7CSource%20Code%20Pro:wght@200)
-
-#### CSS Related:
-[W3 Schools-Text Shadow](https://www.w3schools.com/cssref/css3_pr_text-shadow.asp)
-
-[W3 Docs - Blinking Animations](https://www.w3docs.com/snippets/css/how-to-create-a-blinking-effect-with-css3-animations.html)
-
-[GetFlyWheel - Combining FLex & Grid](https://getflywheel.com/layout/combine-flexbox-and-css-grids-for-layouts-how-to/)
-
-[CSS Tricks - Making Shapes](https://css-tricks.com/the-shapes-of-css/)
-
-[CSS Tricks - Neon Text effect](https://css-tricks.com/how-to-create-neon-text-with-css/)
-
-[How Big is My Browser - to help with object scaling](http://howbigismybrowser.com/)
-
-
-#### Javascript Related:
-
-[FreecodeCamp - Using Timeouts in loops](https://www.freecodecamp.org/news/thrown-for-a-loop-understanding-for-loops-and-timeouts-in-javascript-558d8255d8a4/)
-
-[W3 Schools - Countdown techniques](https://www.w3schools.com/howto/howto_js_countdown.asp)
-
-[The Web Dev - More Countdown techniques](https://thewebdev.info/2022/06/29/how-to-create-a-simple-10-second-countdown-with-javascript/)
-
-[MDN - WebStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API#localStorage)
-
-[StackOverflow-More webstorage guidance](https://stackoverflow.com/questions/16206322/how-to-get-js-variable-to-retain-value-after-page-refresh)
-\
 
 
 
